@@ -109,8 +109,15 @@ export default function Hero() {
                   <motion.span
                     key={tool.name}
                     initial={{ opacity: 0, x: -24 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.55, delay: 0.7 + i * 0.18, ease: [0.16, 1, 0.3, 1] }}
+                    animate={{ opacity: [0, 1, 1, 0], x: [-24, 0, 0, -24] }}
+                    transition={{
+                      duration: 4,
+                      times: [0, 0.15, 0.85, 1],
+                      ease: "easeInOut",
+                      delay: 0.7 + i * 0.18,
+                      repeat: Infinity,
+                      repeatDelay: 1.5,
+                    }}
                     className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[var(--text-muted)]"
                   >
                     {tool.icon}
