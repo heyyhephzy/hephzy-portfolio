@@ -108,9 +108,9 @@ export default function Hero() {
                 {tools.map((tool, i) => (
                   <motion.span
                     key={tool.name}
-                    initial={{ opacity: 0, x: -8 }}
+                    initial={{ opacity: 0, x: -24 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
+                    transition={{ duration: 0.55, delay: 0.7 + i * 0.18, ease: [0.16, 1, 0.3, 1] }}
                     className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[var(--text-muted)]"
                   >
                     {tool.icon}
