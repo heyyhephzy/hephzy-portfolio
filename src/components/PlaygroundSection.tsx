@@ -88,7 +88,7 @@ function ConveyorTrack({
     <div className="w-full overflow-hidden py-1">
       <div
         ref={trackRef}
-        className={`${direction === "left" ? "animate-conveyor-left" : "animate-conveyor-right"} flex gap-4`}
+        className={`${direction === "left" ? "animate-conveyor-left" : "animate-conveyor-right"} flex gap-3 sm:gap-4`}
       >
         {/* Items are listed twice so the loop is seamless */}
         {[...items, ...items].map((item, idx) => (
@@ -98,7 +98,7 @@ function ConveyorTrack({
             onClick={() => onSelect(item)}
             aria-hidden={idx >= items.length}
             tabIndex={idx >= items.length ? -1 : 0}
-            className="w-min flex-shrink-0 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-hover)] p-3 shadow-sm hover:shadow-md transition-all duration-200 group cursor-pointer text-left"
+            className="w-min flex-shrink-0 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-hover)] p-2 sm:p-3 shadow-sm hover:shadow-md transition-all duration-200 group cursor-pointer text-left"
           >
             <div className="relative rounded-xl overflow-hidden bg-[var(--bg-card-subtle)]">
               <Image
@@ -106,7 +106,7 @@ function ConveyorTrack({
                 alt={item.title}
                 placeholder="blur"
                 sizes="320px"
-                className="h-44 sm:h-56 w-auto max-w-none group-hover:scale-105 transition-transform duration-300"
+                className="h-28 sm:h-44 lg:h-56 w-auto max-w-none group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <Maximize2 className="w-5 h-5 text-white drop-shadow" />
@@ -131,7 +131,7 @@ export default function PlaygroundSection() {
     <section id="playground" className="py-14 sm:py-20 bg-pink-grain relative overflow-hidden">
 
       {/* Header: dark ink text so it reads on the pink in both themes */}
-      <div className="site-wrap mb-12">
+      <div className="site-wrap mb-8 sm:mb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between">
           <div>
             <p className="font-mono text-xs uppercase tracking-wider text-[#181619] font-semibold mb-2">
@@ -151,7 +151,7 @@ export default function PlaygroundSection() {
       </div>
 
       {/* DUAL CONVEYOR MARQUEES */}
-      <div className="space-y-4 mb-16">
+      <div className="space-y-3 sm:space-y-4 mb-10 sm:mb-16">
         <ConveyorTrack items={conveyorItemsRow1} direction="left" onSelect={setSelectedItem} />
         <ConveyorTrack items={conveyorItemsRow2} direction="right" onSelect={setSelectedItem} />
       </div>
