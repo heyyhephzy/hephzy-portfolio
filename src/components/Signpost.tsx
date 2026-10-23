@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
 
 // The footer scene: a street signpost on the left. Positions are percentages of the scene, so it scales with the footer.
@@ -141,27 +140,6 @@ export default function Signpost() {
       {/* Pole */}
       <div className="absolute top-[39%] bottom-0 w-[10px] rounded-sm bg-[#141214]" style={{ left: "calc(21.9% - 5px)" }} />
 
-      {/* Gwen, swinging from the pole */}
-      <Image
-        src="/illustrations/gwen-swing.png"
-        alt="Spider-Gwen swinging from a web"
-        width={461}
-        height={426}
-        priority
-        className="absolute h-auto"
-        style={{ top: "15.5%", left: "7.5%", width: "25%" }}
-      />
-
-      {/* Separate web on the floor */}
-      <Image
-        src="/illustrations/web-floor.png"
-        alt=""
-        priority
-        width={155}
-        height={150}
-        className="absolute h-auto"
-        style={{ top: "77%", left: "89%", width: "7%" }}
-      />
 
       {/* Clouds */}
       <Cloud style={{ top: "63%", left: "3.9%", width: "7.5%" }} />
