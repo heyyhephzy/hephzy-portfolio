@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
 
-// Footer navigation as a street signpost. Positions are percentages of the scene, so it scales with its container.
+// The footer scene: a street signpost on the left. Positions are percentages of the scene, so it scales with the footer.
 const boards = [
   { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "50.6%", left: "4.1%" },
   { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "42.7%", left: "22.7%" },
@@ -71,9 +71,73 @@ function Board({ board }: { board: (typeof boards)[number] }) {
   );
 }
 
+
+// Phone layout: the same boards stacked down a centred pole, so the text stays readable.
+function MobileBoard({ board }: { board: (typeof boards)[number] }) {
+  const Arrow = board.side === "right" ? ArrowRight : ArrowLeft;
+  const content = (
+    <span
+      className={`flex h-full w-full items-center gap-3 rounded-lg px-4 py-2.5 ${
+        board.side === "left" ? "flex-row" : "flex-row-reverse text-right"
+      } ${board.dark ? "bg-[#141214] text-white" : "bg-[#FFF6FA] text-[#141214]"}`}
+    >
+      <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]">
+        <Arrow className="w-4 h-4" />
+      </span>
+      <span className="flex flex-col">
+        <span className={`text-lg font-extrabold leading-none ${board.dark && board.label !== "LinkedIn" ? "text-[#FF4FA3]" : ""}`}>
+          {board.label}
+        </span>
+        <span className="mt-1 text-xs font-medium opacity-80">{board.caption}</span>
+      </span>
+    </span>
+  );
+  const frame = "relative z-10 flex w-[80%] rounded-xl bg-[#141214] p-[3px] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)]";
+
+  if (!board.href) {
+    return <span aria-disabled="true" className={`${frame} cursor-default`}>{content}</span>;
+  }
+  return (
+    <a
+      href={board.href}
+      target={board.external ? "_blank" : undefined}
+      rel={board.external ? "noopener noreferrer" : undefined}
+      className={frame}
+    >
+      {content}
+    </a>
+  );
+}
+
+function MobileSignpost() {
+  return (
+    <div className="md:hidden flex flex-col items-center bg-[#FF8CC6] px-6 pt-10 pb-8">
+      <Image
+        src="/illustrations/gwen-swing.png"
+        alt="Spider-Gwen swinging from a web"
+        width={640}
+        height={408}
+        className="w-48 h-auto"
+      />
+      <div className="relative flex w-full flex-col items-center gap-3 pt-2">
+        <div className="absolute inset-y-0 left-1/2 w-2 -translate-x-1/2 rounded-sm bg-[#141214]" />
+        {boards.map((board) => (
+          <MobileBoard key={board.label} board={board} />
+        ))}
+        <div className="relative z-10 mt-2 flex items-center gap-1.5">
+          <MapPin className="w-5 h-5 text-[#141214]" fill="#FF4FA3" />
+          <span className="rounded-full bg-[#141214] px-2.5 py-1 text-xs font-medium text-white">You are here</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Signpost() {
   return (
-    <div className="relative w-full max-w-[1140px] mx-auto aspect-[1140/773] rounded-3xl bg-[#FF8CC6] overflow-hidden">
+    <>
+      <MobileSignpost />
+    <div className="relative hidden md:block w-full aspect-[1140/773] bg-[#FF8CC6]">
       {/* Pole */}
       <div className="absolute top-[39%] bottom-0 w-[10px] rounded-sm bg-[#141214]" style={{ left: "calc(21.9% - 5px)" }} />
 
@@ -103,5 +167,6 @@ export default function Signpost() {
         </span>
       </div>
     </div>
+    </>
   );
 }
