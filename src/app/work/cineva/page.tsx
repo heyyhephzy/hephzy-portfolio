@@ -167,20 +167,18 @@ export default function CinevaCaseStudy() {
           </div>
         </div>
 
-        {/* Floating screen collage */}
-        <div className="relative h-[420px] sm:h-[560px] lg:h-[640px] mt-4">
-          <div className="absolute" style={{ right: "22%", top: "6%", width: "min(26vw, 290px)", transform: "rotate(-6deg)" }}>
-            <Screen src="splash-dark" alt="Cineva splash screen: logo above tilted movie posters, with a coral Get started button" />
-          </div>
-          <div className="absolute" style={{ right: "2%", top: "0%", width: "min(30vw, 330px)", transform: "rotate(5deg)" }}>
-            <Screen
-              src="home-dark"
-              alt="Cineva home screen: Moana 2 featured, with Now showing and Popular this week rows"
+        {/* Cover artwork: same image as the homepage card */}
+        <div className={`${wrap} relative pb-16 sm:pb-24`}>
+          <div className="overflow-hidden rounded-[28px]">
+            <Image
+              src="/covers/cineva.jpg"
+              alt="Cineva cover: dark app screens with movie posters on a black background"
+              width={1600}
+              height={1066}
               priority
+              sizes="(min-width: 1440px) 1440px, 100vw"
+              className="w-full h-auto block"
             />
-          </div>
-          <div className="absolute hidden sm:block" style={{ right: "44%", top: "16%", width: "min(24vw, 270px)", transform: "rotate(-10deg)" }}>
-            <Screen src="details-dark" alt="Cineva movie details screen: Moana 2 backdrop, ratings, synopsis and cast" />
           </div>
         </div>
       </header>
