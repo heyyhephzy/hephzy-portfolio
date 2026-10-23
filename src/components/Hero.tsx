@@ -112,7 +112,7 @@ export default function Hero() {
                       key={`${tool.name}-${idx}`}
                       className="inline-flex items-center gap-1.5"
                     >
-                      {tool.icon}<span className="text-black">{tool.name}</span>
+                      {tool.icon}<span className="text-[var(--text-main)]">{tool.name}</span>
                     </span>
                   ))}
                 </div>
