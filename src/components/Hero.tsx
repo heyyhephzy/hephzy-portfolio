@@ -23,7 +23,7 @@ const tools = [
   { name: "Claude", icon: <BrandIcon path={siClaude.path} className="w-6 h-6" color={`#${siClaude.hex}`} />, color: `#${siClaude.hex}` },
   { name: "Antigravity", icon: <Orbit className="w-6 h-6" color="#FF5F5F" />, color: "#FF5F5F" },
   { name: "Figma", icon: <FigmaLogo className="w-6 h-6" />, color: "#000000" },
-  { name: "GitHub", icon: <BrandIcon path={siGithub.path} className="w-6 h-6" color={`#${siGithub.hex}`} />, color: `#${siGithub.hex}` },
+  { name: "GitHub", icon: <BrandIcon path={siGithub.path} className="w-6 h-6 text-[var(--text-main)]" color="currentColor" />, color: `#${siGithub.hex}` },
 ];
 
 export default function Hero() {
