@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ArrowUp, Mail, Copy, Check, Sparkles } from "lucide-react";
 import Signpost from "@/components/Signpost";
 
@@ -9,6 +9,22 @@ const email = "heyyhephzy@gmail.com";
 export default function Footer() {
   const [copied, setCopied] = useState(false);
   const [localTime, setLocalTime] = useState("");
+  const footerRef = useRef<HTMLElement>(null);
+
+  // On desktop the footer sits fixed underneath the page, so the page publishes its height to leave room for it
+  useEffect(() => {
+    const el = footerRef.current;
+    if (!el) return;
+
+    const setHeight = () => {
+      document.documentElement.style.setProperty("--footer-h", `${el.offsetHeight}px`);
+    };
+
+    setHeight();
+    const observer = new ResizeObserver(setHeight);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const updateTime = () => {
@@ -45,7 +61,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="contact" className="relative overflow-hidden bg-[#FF8CC6] text-[#141214]">
+    <footer ref={footerRef} id="contact" className="relative md:fixed md:inset-x-0 md:bottom-0 z-0 overflow-hidden bg-[#FF8CC6] text-[#141214]">
       <Signpost />
 
       {/* Right side of the scene: contact, clock, socials and the footer bar */}

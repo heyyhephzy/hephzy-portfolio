@@ -129,7 +129,7 @@ export default function Signpost() {
   return (
     <>
       <MobileSignpost />
-    <div className="relative hidden md:block w-full aspect-[1140/773] bg-[#FF8CC6]">
+    <div className="relative hidden md:block w-full md:h-[min(100vh,calc(100vw*0.678))] bg-[#FF8CC6]">
       {/* Pole */}
       <div className="absolute top-[39%] bottom-0 w-[10px] rounded-sm bg-[#141214]" style={{ left: "calc(21.9% - 5px)" }} />
 
