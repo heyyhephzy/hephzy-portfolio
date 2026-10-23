@@ -1,5 +1,4 @@
 import React from "react";
-import CinevaCover from "@/components/covers/CinevaCover";
 
 export interface Project {
   id: string;
@@ -81,7 +80,7 @@ export const projects: Project[] = [
       "Every screen designed in both Dark and Light modes",
     ],
     href: "/work/cineva",
-    animatedCover: CinevaCover,
+    cover: "/covers/cineva.jpg",
   },
   {
     id: "cowrywise-ambassadors",
