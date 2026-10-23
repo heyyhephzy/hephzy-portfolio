@@ -63,7 +63,7 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
       <div className="mx-auto max-w-4xl grid grid-cols-1 gap-y-16 sm:gap-y-24">
         {projects.map((project, idx) => {
           const content = (
-            <div className="work-card-tile block cursor-pointer text-left">
+            <div className={`work-card-tile block text-left ${project.comingSoon ? "" : "cursor-pointer"}`}>
               <div className="work-card-media">
                 {project.animatedCover ? (
                   <project.animatedCover />
@@ -83,30 +83,39 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
                     <span className="text-4xl">{project.icon}</span>
                   </div>
                 )}
+                {project.comingSoon && (
+                  <span className="absolute top-4 left-4 z-10 rounded-full bg-[var(--text-main)] px-3.5 py-1.5 text-xs font-sans font-medium text-[var(--bg-main)]">
+                    Coming soon
+                  </span>
+                )}
               </div>
 
-              <div className="work-card-caption">
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text-main)]">
-                  {project.title}
-                </h3>
-                <p className="mt-1 text-sm sm:text-base font-sans text-[var(--text-muted)]">{project.descriptor}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.category.split(" & ").map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full border border-[var(--text-main)] text-xs font-mono text-[var(--text-main)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              {!project.comingSoon && (
+                <div className="work-card-caption">
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text-main)]">
+                    {project.title}
+                  </h3>
+                  <p className="mt-1 text-sm sm:text-base font-sans text-[var(--text-muted)]">{project.descriptor}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.category.split(" & ").map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 rounded-full border border-[var(--text-main)] text-xs font-mono text-[var(--text-main)]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           );
 
           return (
             <RevealCard key={project.id} index={idx}>
-              {project.href ? (
+              {project.comingSoon ? (
+                content
+              ) : project.href ? (
                 <Link href={project.href}>{content}</Link>
               ) : (
                 <div

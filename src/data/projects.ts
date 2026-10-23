@@ -19,6 +19,8 @@ export interface Project {
   cover?: string;
   /** Moving cover drawn in code; used instead of `cover` when set. */
   animatedCover?: React.ComponentType;
+  /** Shows a "Coming soon" card: no title, details or link. */
+  comingSoon?: boolean;
 }
 
 export const projects: Project[] = [
@@ -84,6 +86,7 @@ export const projects: Project[] = [
   },
   {
     id: "cowrywise-ambassadors",
+    comingSoon: true,
     title: "Cowrywise Ambassador Hub",
     descriptor: "Campus financial literacy platform",
     category: "Fintech & Community",

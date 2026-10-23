@@ -32,7 +32,7 @@ export default function ProjectsSection() {
       <div className="mt-12 sm:mt-16 flex justify-center">
         <Link
           href="/work"
-          className="inline-flex items-center gap-1.5 text-sm font-mono text-[var(--text-main)] hover:text-[var(--accent-pink)] transition-colors"
+          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-sans font-medium bg-[var(--text-main)] text-[var(--bg-main)] shadow-sm hover:bg-[var(--accent-pink)] hover:text-white transition-colors"
         >
           <span>View more work</span>
           <ArrowUpRight className="w-4 h-4" />
