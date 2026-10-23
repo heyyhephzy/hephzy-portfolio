@@ -20,16 +20,9 @@ import type { Project } from "@/data/projects";
  * (not once), so the fallback also replays each time a card crosses the
  * viewport edge instead of firing only on first load.
  */
-function RevealCard({
-  index,
-  children,
-}: {
-  index: number;
-  children: React.ReactNode;
-}) {
+function RevealCard({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const isLeft = index % 2 === 0;
 
   useEffect(() => {
     const el = ref.current;
@@ -47,7 +40,7 @@ function RevealCard({
   return (
     <div
       ref={ref}
-      className={["work-card", isLeft ? "is-left" : "is-right", visible ? "is-visible" : ""].join(" ")}
+      className={["work-card", "is-below", visible ? "is-visible" : ""].join(" ")}
     >
       {children}
     </div>
@@ -59,9 +52,9 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
 
   return (
     <>
-      {/* Grid: plain tiles, image + caption, alternating slide-in direction by column */}
+      {/* Grid: plain tiles, image + caption, each rising straight up into view */}
       <div className="mx-auto max-w-4xl grid grid-cols-1 gap-y-16 sm:gap-y-24">
-        {projects.map((project, idx) => {
+        {projects.map((project) => {
           const content = (
             <div className={`work-card-tile block text-left ${project.comingSoon ? "" : "cursor-pointer"}`}>
               <div className="work-card-media">
@@ -112,7 +105,7 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
           );
 
           return (
-            <RevealCard key={project.id} index={idx}>
+            <RevealCard key={project.id}>
               {project.comingSoon ? (
                 content
               ) : project.href ? (

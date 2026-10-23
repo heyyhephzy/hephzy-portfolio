@@ -174,12 +174,8 @@
     opacity 0.7s ease;
 }
 
-.work-card.is-left {
-  transform: translate3d(-120px, 0, 0);
-}
-
-.work-card.is-right {
-  transform: translate3d(120px, 0, 0);
+.work-card.is-below {
+  transform: translate3d(0, 80px, 0);
 }
 
 .work-card.is-visible {
@@ -188,11 +184,8 @@
 }
 
 @media (max-width: 820px) {
-  .work-card.is-left {
-    transform: translate3d(-60px, 0, 0);
-  }
-  .work-card.is-right {
-    transform: translate3d(60px, 0, 0);
+  .work-card.is-below {
+    transform: translate3d(0, 40px, 0);
   }
 }
 
@@ -211,41 +204,25 @@
     animation-range: entry 0% cover 40%;
   }
 
-  .work-card.is-left {
-    animation-name: work-card-slide-left;
-  }
-
-  .work-card.is-right {
-    animation-name: work-card-slide-right;
+  .work-card.is-below {
+    animation-name: work-card-rise;
   }
 }
 
-@keyframes work-card-slide-left {
+@keyframes work-card-rise {
   0% {
     opacity: 0.05;
-    transform: translateX(-10vw);
+    transform: translateY(80px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes work-card-slide-right {
-  0% {
-    opacity: 0.05;
-    transform: translateX(10vw);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .work-card,
-  .work-card.is-left,
-  .work-card.is-right,
+  .work-card.is-below,
   .work-card.is-visible {
     opacity: 1 !important;
     transform: none !important;
