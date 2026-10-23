@@ -65,7 +65,7 @@ export default function Footer() {
       <Signpost />
 
       {/* Right side of the scene: contact, clock, socials and the footer bar */}
-      <div className="relative flex flex-col justify-between gap-12 p-6 sm:p-10 md:absolute md:inset-y-0 md:right-0 md:w-1/2 md:p-14">
+      <div className="relative flex flex-col justify-between gap-12 p-6 sm:p-10 md:absolute md:inset-y-0 md:right-0 md:w-1/2 md:px-14 md:pb-14 md:pt-36">
         <div className="space-y-5">
           <div className="inline-flex items-center gap-2 rounded-full bg-[#141214] px-3.5 py-1 text-xs font-mono font-semibold text-white">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
