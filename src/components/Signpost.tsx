@@ -149,7 +149,7 @@ export default function Signpost() {
         height={426}
         priority
         className="absolute h-auto"
-        style={{ top: "17%", left: "12.9%", width: "25%" }}
+        style={{ top: "15.5%", left: "7.5%", width: "25%" }}
       />
 
       {/* Separate web on the floor */}
