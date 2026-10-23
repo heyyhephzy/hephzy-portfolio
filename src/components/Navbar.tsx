@@ -77,10 +77,10 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center py-3 sm:py-4 px-6 sm:px-10 lg:px-16 transition-all duration-300">
+    <header className={`fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-6 sm:px-10 lg:px-16 transition-all duration-300 ${scrolled ? "py-1.5 sm:py-2" : "py-3 sm:py-4"}`}>
       {/* Same edges as the page content (see .site-wrap: 1440px minus the side margins) */}
       <nav
-        className={`w-full max-w-[1312px] pl-4 pr-2.5 sm:px-5 py-2.5 sm:py-3 rounded-full flex items-center justify-between transition-all duration-300 backdrop-blur-md ${
+        className={`w-full max-w-[1312px] pl-4 pr-2.5 sm:px-5 rounded-full flex items-center justify-between transition-all ${scrolled ? "py-1.5 sm:py-2" : "py-2.5 sm:py-3"} duration-300 backdrop-blur-md ${
           scrolled
             ? "bg-[var(--bg-card)]/85 shadow-md shadow-black/5"
             : "bg-[var(--bg-card)]/60"
