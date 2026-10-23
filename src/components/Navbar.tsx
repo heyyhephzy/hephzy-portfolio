@@ -108,7 +108,7 @@ export default function Navbar() {
             <circle ref={eyeRightRef} cx="22" cy="10" r="2.8" fill="var(--accent-pink)" />
           </svg>
 
-          <span className="font-serif text-2xl font-bold tracking-tight text-[var(--text-main)]">
+          <span className="font-serif text-xl font-bold tracking-tight text-[var(--text-main)]">
             Hephzy
           </span>
         </Link>
