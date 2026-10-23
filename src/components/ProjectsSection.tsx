@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import WorkGrid from "@/components/WorkGrid";
@@ -27,13 +26,14 @@ export default function ProjectsSection() {
 
       {/* View more: always shown beneath the four featured projects */}
       <div className="mt-12 sm:mt-16 flex justify-center">
-        <Link
-          href="/work"
-          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-sans font-medium bg-[var(--text-main)] text-[var(--bg-main)] shadow-sm hover:bg-[var(--accent-pink)] hover:text-white transition-colors"
+        {/* Disabled for now: the full Work page isn't ready yet */}
+        <span
+          aria-disabled="true"
+          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-sans font-medium bg-[var(--text-main)] text-[var(--bg-main)] shadow-sm opacity-40 pointer-events-none select-none"
         >
           <span>View more work</span>
           <ArrowUpRight className="w-4 h-4" />
-        </Link>
+        </span>
       </div>
     </section>
   );
