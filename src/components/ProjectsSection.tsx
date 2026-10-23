@@ -3,10 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import WorkGrid from "@/components/WorkGrid";
 
-const HOMEPAGE_PROJECT_COUNT = 4;
+// The homepage shows these four. Everything else lives on the Work page.
+const featuredIds = ["aptivo", "osita-farm", "cineva", "cowrywise-ambassadors"];
 
 export default function ProjectsSection() {
-  const featured = projects.slice(0, HOMEPAGE_PROJECT_COUNT);
+  const featured = projects.filter((project) => featuredIds.includes(project.id));
 
   return (
     <section id="work" className="py-14 sm:py-20 site-wrap">
@@ -27,18 +28,16 @@ export default function ProjectsSection() {
 
       <WorkGrid projects={featured} />
 
-      {/* View more: only shown when there's more work than fits here */}
-      {projects.length > featured.length && (
-        <div className="mt-12 sm:mt-16 flex justify-center">
-          <Link
-            href="/work"
-            className="inline-flex items-center gap-1.5 text-sm font-mono text-[var(--text-main)] hover:text-[var(--accent-pink)] transition-colors"
-          >
-            <span>View more work</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
-        </div>
-      )}
+      {/* View more: always shown beneath the four featured projects */}
+      <div className="mt-12 sm:mt-16 flex justify-center">
+        <Link
+          href="/work"
+          className="inline-flex items-center gap-1.5 text-sm font-mono text-[var(--text-main)] hover:text-[var(--accent-pink)] transition-colors"
+        >
+          <span>View more work</span>
+          <ArrowUpRight className="w-4 h-4" />
+        </Link>
+      </div>
     </section>
   );
 }
