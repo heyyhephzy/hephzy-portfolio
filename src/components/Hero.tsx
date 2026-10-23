@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, BookOpen } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import Image from "next/image";
 import { siClaude, siGithub } from "simple-icons";
 import FigmaLogo from "./FigmaLogo";
@@ -31,7 +31,7 @@ const marqueeHalf = [...tools, ...tools];
 
 export default function Hero() {
   return (
-    <section className="relative pt-28 pb-14 sm:pt-36 sm:pb-20 md:pt-44 md:pb-28 overflow-hidden">
+    <section className="relative pt-28 pb-8 sm:pt-36 sm:pb-10 md:pt-44 md:pb-12 overflow-hidden">
       <div className="site-wrap">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
           
@@ -122,21 +122,6 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Scroll indicator */}
-            <motion.a
-              href="#work"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="inline-flex items-center gap-3 text-xs font-sans font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] group transition-colors"
-            >
-              <span className="p-2 rounded-full border border-[var(--border-subtle)] group-hover:border-[var(--text-main)] group-hover:bg-[var(--bg-card)] transition-colors">
-                <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
-              </span>
-              <span className="underline underline-offset-4 tracking-wider uppercase">
-                Scroll to explore works
-              </span>
-            </motion.a>
 
           </div>
 
