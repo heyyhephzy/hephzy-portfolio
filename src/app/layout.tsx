@@ -35,6 +35,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://heyhephzy.com"),
   title: "Hephzy - Product Designer & Illustrator",
   description:
     "Portfolio of Yahaya Hephzibah (Hephzy) — Product Designer (UI/UX) & Illustrator with a background in Mechatronics Engineering. Crafting thoughtful digital products and expressive visual worlds.",
@@ -54,7 +55,15 @@ export const metadata: Metadata = {
     description:
       "Crafting intuitive digital products with an engineer's precision and an illustrator's touch.",
     type: "website",
-    url: "https://x.com/heyhephzy",
+    url: "https://heyhephzy.com",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hephzy's Aptivo cover: a learning app for early readers",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -62,6 +71,7 @@ export const metadata: Metadata = {
     title: "Hephzy - Product Designer & Illustrator",
     description:
       "Crafting intuitive digital products with an engineer's precision and an illustrator's touch.",
+    images: ["/og-image.jpg"],
   },
 };
 
