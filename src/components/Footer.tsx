@@ -67,7 +67,7 @@ export default function Footer() {
 
           <button
             onClick={copyEmail}
-            className="inline-flex max-w-full items-center gap-3 rounded-full bg-[#141214] px-5 py-3.5 font-mono text-sm font-bold text-white shadow-md transition-transform active:scale-95 hover:-translate-y-0.5"
+            className="inline-flex max-w-full items-center gap-3 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-4 py-2.5 font-mono text-sm font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none"
           >
             <Mail className="w-4 h-4 text-[#FF8CC6]" />
             <span>{email}</span>
@@ -104,10 +104,10 @@ export default function Footer() {
             <span>&copy; 2026 Yahaya Hephzibah (Hephzy)</span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 self-start rounded-full bg-[#141214] px-4 py-1.5 text-white sm:self-auto"
+              className="inline-flex items-center gap-2.5 self-start rounded-xl border-[3px] border-[#141214] bg-[#FFF6FA] px-3 py-1.5 font-mono text-xs font-bold text-[#141214] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none sm:self-auto"
             >
               <span>Back to top</span>
-              <ArrowUp className="w-3.5 h-3.5" />
+              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]"><ArrowUp className="w-3.5 h-3.5" /></span>
             </button>
           </div>
         </div>
