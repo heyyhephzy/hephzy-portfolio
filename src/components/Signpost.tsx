@@ -117,7 +117,7 @@ function MobileSignpost() {
         alt="Spider-Gwen swinging from a web"
         width={461}
         height={426}
-        className="w-48 h-auto"
+        className="relative z-10 w-48 h-auto -mb-2"
       />
       <div className="relative flex w-full flex-col items-center gap-3 pt-2">
         <div className="absolute inset-y-0 left-1/2 w-2 -translate-x-1/2 rounded-sm bg-[#141214]" />
