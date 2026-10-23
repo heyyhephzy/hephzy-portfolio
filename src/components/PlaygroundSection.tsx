@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import confetti from "canvas-confetti";
 import Image, { type StaticImageData } from "next/image";
-import { Sparkles, RotateCcw, Maximize2, X, Move } from "lucide-react";
+import { Maximize2, X } from "lucide-react";
 
 import abujaGate from "../../public/Abuja City Gate.png";
 import cart from "../../public/cart2.png";
@@ -125,46 +124,8 @@ function ConveyorTrack({
   );
 }
 
-interface Sticker {
-  id: string;
-  emoji: string;
-  label: string;
-  // Starting position as a % of the sandbox, so it fits any screen width
-  left: string;
-  top: string;
-  rotation: number;
-  bg: string;
-}
-
-const initialStickers: Sticker[] = [
-  { id: "s1", emoji: "🦊", label: "Cyber-Fox", left: "3%", top: "6%", rotation: -6, bg: "from-pink-500/20 to-rose-500/10" },
-  { id: "s2", emoji: "🦾", label: "Mechatronics", left: "46%", top: "5%", rotation: 8, bg: "from-blue-500/20 to-indigo-500/10" },
-  { id: "s3", emoji: "✨", label: "Pure Soul", left: "14%", top: "28%", rotation: -4, bg: "from-amber-500/20 to-yellow-500/10" },
-  { id: "s4", emoji: "☕", label: "Fuel", left: "60%", top: "30%", rotation: 12, bg: "from-orange-500/20 to-amber-500/10" },
-  { id: "s5", emoji: "🦉", label: "Cowrywise", left: "4%", top: "52%", rotation: -8, bg: "from-cyan-500/20 to-blue-500/10" },
-  { id: "s6", emoji: "🎧", label: "Bangers", left: "50%", top: "54%", rotation: 5, bg: "from-purple-500/20 to-pink-500/10" },
-  { id: "s7", emoji: "📐", label: "Clean Paths", left: "8%", top: "76%", rotation: -10, bg: "from-emerald-500/20 to-teal-500/10" },
-  { id: "s8", emoji: "🛟", label: "Soft Life", left: "54%", top: "77%", rotation: 6, bg: "from-rose-500/20 to-pink-500/10" },
-];
-
 export default function PlaygroundSection() {
   const [selectedItem, setSelectedItem] = useState<PlaygroundItem | null>(null);
-  const [stickersKey, setStickersKey] = useState(0);
-  const sandboxRef = useRef<HTMLDivElement | null>(null);
-
-  const handleStickerBomb = () => {
-    confetti({
-      particleCount: 50,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ["#D94676", "#2563EB", "#10B981", "#F59E0B"],
-    });
-    setStickersKey((prev) => prev + 1);
-  };
-
-  const handleReset = () => {
-    setStickersKey((prev) => prev + 1);
-  };
 
   return (
     <section id="playground" className="py-14 sm:py-20 bg-pink-grain relative overflow-hidden">
@@ -180,7 +141,7 @@ export default function PlaygroundSection() {
               Vector studies &amp; <span className="subtle-highlight font-serif italic">explorations</span>.
             </h2>
             <p className="text-sm text-[#181619]/80 mt-1.5 max-w-xl font-sans">
-              Experiments, character studies, and an interactive sticker sandbox.
+              Experiments and character studies.
             </p>
           </div>
           <span className="font-mono text-xs text-[#181619]/75 mt-4 md:mt-0">
@@ -193,86 +154,6 @@ export default function PlaygroundSection() {
       <div className="space-y-4 mb-16">
         <ConveyorTrack items={conveyorItemsRow1} direction="left" onSelect={setSelectedItem} />
         <ConveyorTrack items={conveyorItemsRow2} direction="right" onSelect={setSelectedItem} />
-      </div>
-
-      {/* NEW CREATIVE FEATURE: THE INTERACTIVE STICKER SANDBOX */}
-      <div className="site-wrap">
-        <div className="rounded-3xl bg-[var(--bg-card)] border border-[var(--border-subtle)] p-4 sm:p-8 shadow-sm">
-          
-          {/* Header of Sandbox */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[var(--border-subtle)] mb-5">
-            <div>
-              <div className="flex items-center gap-2">
-                <Move className="w-4 h-4 text-[var(--accent-pink)]" />
-                <h3 className="font-serif text-2xl font-bold text-[var(--text-main)]">
-                  Sticker Sandbox
-                </h3>
-              </div>
-              <p className="text-xs text-[var(--text-muted)] font-sans mt-0.5">
-                Drag, fling, and rearrange Hephzy’s custom illustration stickers across the stage.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2 font-mono text-xs">
-              <button
-                onClick={handleStickerBomb}
-                className="px-3.5 py-1.5 rounded-full bg-[var(--text-main)] hover:bg-[var(--accent-pink)] text-[var(--bg-main)] hover:text-white transition-colors flex items-center gap-1.5 font-medium shadow-sm active:scale-95"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Sticker Bomb</span>
-              </button>
-              <button
-                onClick={handleReset}
-                className="px-3 py-1.5 rounded-full border border-[var(--border-subtle)] hover:bg-[var(--bg-card-subtle)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors flex items-center gap-1"
-                title="Reset layout"
-              >
-                <RotateCcw className="w-3 h-3" />
-                <span>Reset</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Draggable Sandbox Area */}
-          <div
-            ref={sandboxRef}
-            key={stickersKey}
-            className="relative w-full h-80 sm:h-96 rounded-2xl bg-[var(--bg-main)] border border-dashed border-[var(--border-subtle)] overflow-hidden p-4 select-none"
-          >
-            {initialStickers.map((sticker) => (
-              <motion.div
-                key={sticker.id}
-                drag
-                dragConstraints={sandboxRef}
-                dragElastic={0.2}
-                dragTransition={{ bounceStiffness: 400, bounceDamping: 20 }}
-                whileHover={{ scale: 1.15, cursor: "grab", zIndex: 40 }}
-                whileTap={{ scale: 0.95, cursor: "grabbing" }}
-                style={{ left: sticker.left, top: sticker.top }}
-                initial={{ rotate: sticker.rotation, opacity: 0, scale: 0.8 }}
-                animate={{ rotate: sticker.rotation, opacity: 1, scale: 1 }}
-                className={`absolute px-2 py-1.5 sm:px-3 sm:py-2 rounded-2xl bg-gradient-to-br ${sticker.bg} bg-[var(--bg-card)] border-2 border-[var(--border-subtle)] shadow-md flex items-center gap-1.5 sm:gap-2 cursor-grab active:cursor-grabbing backdrop-blur-sm whitespace-nowrap`}
-              >
-                <span className="text-lg sm:text-2xl">{sticker.emoji}</span>
-                <span className="text-[10px] sm:text-[11px] font-mono font-bold text-[var(--text-main)]">
-                  {sticker.label}
-                </span>
-              </motion.div>
-            ))}
-
-            {/* Subtle background hint */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-              <span className="font-serif italic text-2xl text-[var(--text-muted)]">
-                toss stickers around ✨
-              </span>
-            </div>
-          </div>
-
-          <div className="mt-3 flex items-center justify-between text-[11px] font-mono text-[var(--text-subtle)]">
-            <span>Built with Framer Motion spring physics</span>
-            <span>Interactive sandbox</span>
-          </div>
-
-        </div>
       </div>
 
       {/* Lightbox Modal */}

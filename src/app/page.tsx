@@ -28,7 +28,7 @@ export default function Home() {
         {/* Selected Works (Clean, visual, punchy cards) */}
         <ProjectsSection />
 
-        {/* The Creative Playground (Dual Marquee Conveyors + Sticker Sandbox) */}
+        {/* The Creative Playground (Dual Marquee Conveyors) */}
         <PlaygroundSection />
 
         {/* Concise About Me */}
