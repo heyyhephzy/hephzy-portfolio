@@ -561,7 +561,7 @@ export default function CinevaCaseStudy() {
             All seven screens of the flow, Dark and Light side by side &mdash; same layout, same tokens, just a mode
             switch.
           </Body>
-          <div className="mt-10 space-y-10 overflow-x-auto">
+          <div className="mt-10 space-y-10 sm:overflow-x-auto">
             {(
               [
                 { label: "Dark mode", suffix: "dark" },
@@ -572,13 +572,13 @@ export default function CinevaCaseStudy() {
                 <p className={`${sans} text-xs font-semibold uppercase tracking-[0.08em]`} style={{ color: C.coral }}>
                   {row.label}
                 </p>
-                <div className="mt-4 flex gap-3 sm:gap-4 min-w-max">
+                <div className="mt-4 grid grid-cols-3 gap-3 sm:flex sm:gap-4 sm:min-w-max">
                   {["splash", "home", "details", "showtimes", "seats", "checkout", "ticket"].map((s) => (
                     <Screen
                       key={s}
                       src={`${s}-${row.suffix}`}
                       alt={`Cineva ${s} screen, ${row.label.toLowerCase()}`}
-                      className="w-[110px] sm:w-[140px] flex-shrink-0"
+                      className="w-full sm:w-[140px] sm:flex-shrink-0"
                     />
                   ))}
                 </div>
