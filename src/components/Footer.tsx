@@ -126,7 +126,7 @@ export default function Footer() {
             <div className="md:col-span-5 flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
               <span className="font-bold tracking-wider uppercase text-pink-50">
-                Lagos, Nigeria (WAT):
+                Port Harcourt, Nigeria (WAT):
               </span>
               <span className="text-white font-medium bg-white/15 px-2.5 py-1 rounded-full">
                 {localTime || "1:00 PM"}
@@ -194,7 +194,7 @@ export default function Footer() {
             <span>&copy; 2026 Yahaya Hephzibah (Hephzy)</span>
             
             <span className="text-[11px] flex items-center gap-1.5 opacity-90">
-              <span>Made with love, tea &amp; vectors in Lagos</span>
+              <span>Made with love, tea &amp; vectors in Port Harcourt</span>
               <Heart className="w-3.5 h-3.5 fill-white text-white" />
             </span>
 

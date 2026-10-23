@@ -17,7 +17,7 @@ export default function AboutSection() {
             </p>
           </div>
           <span className="font-mono text-xs text-[var(--text-muted)]">
-            Lagos, Nigeria 📍
+            Port Harcourt, Nigeria 📍
           </span>
         </div>
 
@@ -40,7 +40,7 @@ export default function AboutSection() {
 
         {/* 4 Feature Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-4 font-mono text-xs">
-          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] border border-[var(--border-subtle)] space-y-1">
+          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
             <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-[var(--accent-pink)] mb-2 shadow-sm">
               <GraduationCap className="w-4 h-4" />
             </div>
@@ -48,7 +48,7 @@ export default function AboutSection() {
             <span className="block font-bold text-[var(--text-main)]">B.ENG Mechatronics</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] border border-[var(--border-subtle)] space-y-1">
+          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
             <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-blue-500 mb-2 shadow-sm">
               <Layers className="w-4 h-4" />
             </div>
@@ -56,7 +56,7 @@ export default function AboutSection() {
             <span className="block font-bold text-[var(--text-main)]">Product Designer</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] border border-[var(--border-subtle)] space-y-1">
+          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
             <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-purple-500 mb-2 shadow-sm">
               <Sparkles className="w-4 h-4" />
             </div>
@@ -64,7 +64,7 @@ export default function AboutSection() {
             <span className="block font-bold text-[var(--text-main)]">Illustrator</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] border border-[var(--border-subtle)] space-y-1">
+          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
             <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-emerald-500 mb-2 shadow-sm">
               <Compass className="w-4 h-4" />
             </div>

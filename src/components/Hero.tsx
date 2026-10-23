@@ -163,7 +163,7 @@ export default function Hero() {
               <div className="space-y-0.5 font-mono text-xs">
                 <span className="font-bold text-[var(--text-main)]">Hephzy</span>
                 <span className="block text-[11px] text-[var(--text-muted)]">
-                  Lagos, Nigeria 📍
+                  Port Harcourt, Nigeria 📍
                 </span>
               </div>
 
