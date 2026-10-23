@@ -20,8 +20,8 @@ export default function Home() {
       {/* Floating Pill Navigation with Eye Mascot */}
       <Navbar />
 
-      {/* Main Content */}
-      <main className="flex-grow">
+      {/* Main Content: sits above the fixed footer and slides away to reveal it */}
+      <main className="flex-grow relative z-10 bg-[var(--bg-main)]" style={{ marginBottom: "var(--footer-h, 0px)" }}>
         {/* Breezy Hero (Inspired by Toyo's Creative Space) */}
         <Hero />
 
@@ -35,7 +35,7 @@ export default function Home() {
         <AboutSection />
       </main>
 
-      {/* Illustrated Wave Footer with Floating Mascot, Lagos Clock & Socials */}
+      {/* Illustrated Wave Footer, fixed underneath the page, with Lagos Clock & Socials */}
       <Footer />
     </div>
   );

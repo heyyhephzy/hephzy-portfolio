@@ -7,31 +7,23 @@ import { ArrowUp, Mail, Copy, Check, Sparkles, Heart } from "lucide-react";
 export default function Footer() {
   const [copied, setCopied] = useState(false);
   const [localTime, setLocalTime] = useState("");
-  const riseRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLElement>(null);
 
   const email = "heyyhephzy@gmail.com";
 
-  // The footer starts 18vh low and rises to its place as its top edge moves up the screen
+  // The footer is fixed underneath the page, so the page publishes its height to leave room for it
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = footerRef.current;
+    if (!el) return;
 
-    const updateRise = () => {
-      const el = riseRef.current;
-      if (!el) return;
-      // Measure the footer itself, not the child we are moving, so the transform doesn't feed back into the maths
-      const top = (el.parentElement ?? el).getBoundingClientRect().top;
-      // Fully risen by the time the footer's top edge is 75% of the way down the screen, so it settles before the page ends
-      const progress = Math.min(1, Math.max(0, (window.innerHeight - top) / (window.innerHeight * 0.25)));
-      el.style.transform = `translateY(${((1 - progress) * 18).toFixed(2)}vh)`;
+    const setHeight = () => {
+      document.documentElement.style.setProperty("--footer-h", `${el.offsetHeight}px`);
     };
 
-    updateRise();
-    window.addEventListener("scroll", updateRise, { passive: true });
-    window.addEventListener("resize", updateRise);
-    return () => {
-      window.removeEventListener("scroll", updateRise);
-      window.removeEventListener("resize", updateRise);
-    };
+    setHeight();
+    const observer = new ResizeObserver(setHeight);
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -63,12 +55,10 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="relative mt-12 sm:mt-28 overflow-hidden">
-      {/* Rises into view as the page scrolls to the end (see .footer-rise in globals.css) */}
-      <div ref={riseRef}>
+    <footer ref={footerRef} id="contact" className="fixed inset-x-0 bottom-0 z-0 overflow-hidden">
 
       {/* Dramatic Top Wave Silhouette in Signature #FF4FA3 Pink */}
-      <div className="relative w-full h-20 sm:h-28 text-[#FF4FA3] -mb-1">
+      <div className="relative w-full h-20 sm:h-24 text-[#FF4FA3] -mb-1">
         <svg
           viewBox="0 0 1440 120"
           fill="currentColor"
@@ -80,13 +70,13 @@ export default function Footer() {
       </div>
 
       {/* Dramatic Vibrant Pink Canvas using exact #FF4FA3 to #D6247F palette */}
-      <div className="bg-gradient-to-br from-[#FF4FA3] via-[#D6247F] to-[#880E4F] text-white py-14 sm:py-20 relative">
+      <div className="bg-gradient-to-br from-[#FF4FA3] via-[#D6247F] to-[#880E4F] text-white py-10 sm:py-14 relative">
         
         {/* Soft Ambient Radiance */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-10 left-10 w-72 h-72 bg-purple-900/20 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="site-wrap space-y-16 relative z-10">
+        <div className="site-wrap space-y-10 relative z-10">
           
           {/* Top Dramatic Headline */}
           <div className="max-w-3xl space-y-5">
@@ -95,7 +85,7 @@ export default function Footer() {
               <span>HAVE A BOLD PROJECT IN MIND?</span>
             </div>
 
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08]">
               Let&apos;s build something{" "}
               <span className="italic underline decoration-pink-200 underline-offset-8">
                 unforgettable
@@ -219,7 +209,6 @@ export default function Footer() {
 
         </div>
 
-      </div>
       </div>
     </footer>
   );
