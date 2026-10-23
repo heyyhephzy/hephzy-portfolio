@@ -14,7 +14,7 @@ const IMG = "/case-studies2/osita-farm";
 
 // Figma exports, 1608×3496 each
 const screen = (n: number, alt: string): Shot => ({
-  src: `${IMG}/screen-0${n}.png`,
+  src: `${IMG}/screen-0${n}.webp`,
   width: 1608,
   height: 3496,
   alt,
@@ -43,7 +43,7 @@ export default function OsitaFarmCaseStudy() {
         title="Osita Farm: a grocery app that lets the produce sell itself"
         tags={["concept", "e-commerce", "illustration"]}
         cover={{
-          src: `${IMG}/Hero.png`,
+          src: `${IMG}/Hero.webp`,
           width: 5760,
           height: 5314,
           alt: "Osita Farm cover: the red logo, the tagline and three app screens (Home, a tomato product page and the cart) on white",
@@ -227,7 +227,7 @@ export default function OsitaFarmCaseStudy() {
 
         <Figure caption="Part of the produce set: the basket, tomatoes in the brand colours, and bananas" bare>
           <Image
-quality={95}             src={`${IMG}/illustrations.png`}
+quality={95}             src={`${IMG}/illustrations.webp`}
             width={2487}
             height={824}
             alt="Hand-drawn illustrations: a basket of produce, four tomatoes in the brand colours, and a bunch of bananas"
