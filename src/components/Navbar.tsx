@@ -154,7 +154,7 @@ export default function Navbar() {
           {/* Let's Talk CTA */}
           <a
             href="mailto:heyyhephzy@gmail.com"
-            className="flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-full text-sm sm:text-base font-serif font-medium text-[var(--bg-main)] bg-[var(--text-main)] hover:bg-[var(--accent-pink)] hover:text-white transition-colors shadow-sm whitespace-nowrap"
+            className="flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-full text-sm sm:text-base font-serif font-medium text-[var(--bg-main)] bg-[var(--text-main)] shadow-[0_4px_0_0_#D6247F] hover:shadow-[0_2px_0_0_#D6247F] hover:translate-y-0.5 active:shadow-none active:translate-y-1 transition-all duration-150 whitespace-nowrap"
           >
             <span>Get in touch</span>
             <ArrowUpRight className="w-3 h-3" />
