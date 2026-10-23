@@ -90,7 +90,7 @@ export const projects: Project[] = [
     title: "Cowrywise Ambassador Hub",
     descriptor: "Campus financial literacy platform",
     category: "Fintech & Community",
-    role: "Design Team Member",
+    role: "Designer",
     year: "2025",
     oneLiner: "Gamified platform empowering student leaders to build financial literacy across campuses.",
     color: "#2563EB",

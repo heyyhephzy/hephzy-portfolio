@@ -33,7 +33,7 @@ export default function AboutSection() {
               I studied <strong>Mechatronics Engineering</strong>, where I developed a deep appreciation for systems architecture, circuit logic, and state machines. That background shapes how I approach product design: making sure complex workflows stay simple, responsive, and stress-free for real users.
             </p>
             <p>
-              As an <strong>Illustrator</strong> and design team member at <strong>Cowrywise Ambassadors</strong>, I balance that engineering discipline with expressive visual craft — giving digital products distinct character, charm, and human warmth.
+              As an <strong>Illustrator</strong> and <strong>Designer</strong> at <strong>Cowrywise Ambassadors</strong>, I balance that engineering discipline with expressive visual craft — giving digital products distinct character, charm, and human warmth.
             </p>
           </div>
         </div>
