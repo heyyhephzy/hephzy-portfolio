@@ -21,9 +21,6 @@ export default function WorkPage() {
             <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[var(--text-main)]">
               All Work
             </h1>
-            <p className="text-xs font-mono text-[var(--text-muted)] mt-2">
-              {projects.length} Projects · Product design, systems &amp; illustration
-            </p>
           </div>
 
           <WorkGrid projects={projects} />
