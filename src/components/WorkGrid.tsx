@@ -60,7 +60,7 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
   return (
     <>
       {/* Grid: plain tiles, image + caption, alternating slide-in direction by column */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-10 gap-y-14 sm:gap-y-20">
+      <div className="mx-auto max-w-4xl grid grid-cols-1 gap-y-16 sm:gap-y-24">
         {projects.map((project, idx) => {
           const hoverLabel = project.href ? "Click to open case study" : "Click to view details";
 
@@ -89,14 +89,20 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
               </div>
 
               <div className="work-card-caption">
-                <span className="work-card-eyebrow" style={{ color: project.color }}>
-                  {project.category}
-                </span>
-                <h3 className="work-card-title-line font-serif text-lg sm:text-xl text-[var(--text-main)]">
-                  <strong>{project.title}</strong>
-                  <span className="sep">|</span>
-                  <span className="descriptor">{project.descriptor}</span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text-main)]">
+                  {project.title}
                 </h3>
+                <p className="mt-1 text-sm sm:text-base font-sans text-[var(--text-muted)]">{project.descriptor}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.category.split(" & ").map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full border border-[var(--text-main)] text-xs font-mono text-[var(--text-main)]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           );
