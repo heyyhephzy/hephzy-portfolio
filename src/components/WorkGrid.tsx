@@ -62,8 +62,6 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
       {/* Grid: plain tiles, image + caption, alternating slide-in direction by column */}
       <div className="mx-auto max-w-4xl grid grid-cols-1 gap-y-16 sm:gap-y-24">
         {projects.map((project, idx) => {
-          const hoverLabel = project.href ? "Click to open case study" : "Click to view details";
-
           const content = (
             <div className="work-card-tile block cursor-pointer text-left">
               <div className="work-card-media">
@@ -85,7 +83,6 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
                     <span className="text-4xl">{project.icon}</span>
                   </div>
                 )}
-                <span className="work-card-hover-cue">{hoverLabel}</span>
               </div>
 
               <div className="work-card-caption">

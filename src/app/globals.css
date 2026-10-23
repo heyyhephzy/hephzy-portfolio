@@ -272,28 +272,6 @@
   transform: scale(1.012);
 }
 
-.work-card-hover-cue {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.28);
-  color: #fff;
-  font-size: 12px;
-  font-family: var(--font-mono);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: opacity 0.35s ease;
-  pointer-events: none;
-}
-
-.work-card-tile:hover .work-card-hover-cue,
-.work-card-tile:focus-visible .work-card-hover-cue {
-  opacity: 1;
-}
-
 .work-card-caption {
   padding-top: 14px;
 }
