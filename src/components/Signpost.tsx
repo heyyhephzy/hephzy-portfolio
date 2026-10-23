@@ -111,13 +111,6 @@ function MobileBoard({ board }: { board: (typeof boards)[number] }) {
 function MobileSignpost() {
   return (
     <div className="md:hidden flex flex-col items-center bg-[#FF8CC6] px-6 pt-10 pb-8">
-      <Image
-        src="/illustrations/gwen-swing.png"
-        alt="Spider-Gwen swinging from a web"
-        width={461}
-        height={426}
-        className="relative z-10 w-48 h-auto -mb-2"
-      />
       <div className="relative flex w-full flex-col items-center gap-3 pt-2">
         <div className="absolute inset-y-0 left-1/2 w-2 -translate-x-1/2 rounded-sm bg-[#141214]" />
         {boards.map((board) => (
