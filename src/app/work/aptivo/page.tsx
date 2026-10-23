@@ -239,15 +239,6 @@ export default function AptivoCaseStudy() {
       <BackHome />
       {/* ───────── Hero, overview and problem: cream ───────── */}
       <div className="bg-[#FFF6EC]">
-        <nav className={`${wrap} pt-6 sm:pt-8`}>
-          <Link
-            href="/work"
-            className="inline-flex items-center gap-2 text-[15px] font-medium text-[#7A6A62] hover:text-[#F56A57] transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>All work</span>
-          </Link>
-        </nav>
 
         <header className={`${wrap} grid md:grid-cols-[1.15fr_1fr] items-center gap-10 md:gap-12 pt-10 sm:pt-14 pb-16 sm:pb-24`}>
           <div>
