@@ -140,7 +140,7 @@
 .animate-tools-marquee {
   display: flex;
   width: max-content;
-  animation: conveyor-left 14s linear infinite;
+  animation: conveyor-left 28s linear infinite;
 }
 
 .animate-tools-marquee:hover {

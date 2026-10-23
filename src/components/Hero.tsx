@@ -26,6 +26,9 @@ const tools = [
   { name: "GitHub", icon: <BrandIcon path={siGithub.path} className="w-6 h-6 text-[var(--text-main)]" color="currentColor" />, color: `#${siGithub.hex}` },
 ];
 
+// The marquee loops by sliding half its track, so each half repeats the tools enough to cover any screen width
+const marqueeHalf = [...tools, ...tools];
+
 export default function Hero() {
   return (
     <section className="relative pt-28 pb-14 sm:pt-36 sm:pb-20 md:pt-44 md:pb-28 overflow-hidden">
@@ -107,7 +110,7 @@ export default function Hero() {
               {/* Tools row: continuous scrolling marquee of tool icons (CSS animation, same as the Playground conveyors, so it loops without a restart hitch) */}
               <div className="relative overflow-hidden w-full">
                 <div className="animate-tools-marquee items-center gap-8 whitespace-nowrap">
-                  {tools.concat(tools).map((tool, idx) => (
+                  {marqueeHalf.concat(marqueeHalf).map((tool, idx) => (
                     <span
                       key={`${tool.name}-${idx}`}
                       className="inline-flex items-center gap-1.5"
