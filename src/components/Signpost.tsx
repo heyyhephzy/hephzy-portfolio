@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
 
 // The footer scene: a street signpost on the left. Positions are percentages of the scene, so it scales with the footer.
 const boards = [
-  { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "50.6%", left: "4.1%" },
+  { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "48.2%", left: "4.1%" },
   { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "42.7%", left: "22.7%" },
   { label: "About", caption: "The person behind the work", href: "/#about", side: "right", dark: false, top: "59%", left: "22.9%" },
   { label: "Resume", caption: "My experience", href: null, side: "left", dark: true, top: "68.3%", left: "3.9%" },
@@ -115,8 +115,8 @@ function MobileSignpost() {
       <Image
         src="/illustrations/gwen-swing.png"
         alt="Spider-Gwen swinging from a web"
-        width={640}
-        height={408}
+        width={461}
+        height={426}
         className="w-48 h-auto"
       />
       <div className="relative flex w-full flex-col items-center gap-3 pt-2">
@@ -145,10 +145,22 @@ export default function Signpost() {
       <Image
         src="/illustrations/gwen-swing.png"
         alt="Spider-Gwen swinging from a web"
-        width={640}
-        height={408}
+        width={461}
+        height={426}
+        priority
         className="absolute h-auto"
-        style={{ top: "17%", left: "9%", width: "25%" }}
+        style={{ top: "17%", left: "12.9%", width: "25%" }}
+      />
+
+      {/* Separate web on the floor */}
+      <Image
+        src="/illustrations/web-floor.png"
+        alt=""
+        priority
+        width={155}
+        height={150}
+        className="absolute h-auto"
+        style={{ top: "82%", left: "42%", width: "8.5%" }}
       />
 
       {/* Clouds */}
