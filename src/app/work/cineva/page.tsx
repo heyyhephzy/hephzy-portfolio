@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Play, Ticket as TicketIcon, Heart } from "lucide-react";
 import { bricolage, jakarta } from "@/fonts/cineva";
+import BackHome from "@/components/BackHome";
 
 /*
  * Cineva has its own look, taken straight from the Figma case study:
@@ -121,6 +122,7 @@ function Card({ children, className = "" }: { children: React.ReactNode; classNa
 export default function CinevaCaseStudy() {
   return (
     <div className={`${sans} min-h-screen`} style={{ backgroundColor: C.cream, color: C.ink }}>
+      <BackHome />
       {/* ---------- Hero ---------- */}
       <header className="relative overflow-hidden">
         <div
@@ -141,14 +143,7 @@ export default function CinevaCaseStudy() {
         </div>
 
         <div className={`${wrap} relative pt-12 sm:pt-16`}>
-          <Link
-            href="/"
-            className={`${sans} inline-flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-opacity`}
-            style={{ color: C.inkSoft }}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to home
-          </Link>
+          
 
           <p className={`${sans} mt-10 sm:mt-14 text-xs sm:text-sm font-semibold uppercase tracking-[0.1em]`} style={{ color: C.coral }}>
             UI case study
@@ -646,10 +641,7 @@ export default function CinevaCaseStudy() {
             </p>
 
             <div className="mt-14 pt-8 border-t flex flex-wrap items-center justify-between gap-4 max-w-[680px] mx-auto text-base" style={{ borderColor: "rgba(17,17,22,0.08)" }}>
-              <Link href="/" className="inline-flex items-center gap-2 font-medium hover:opacity-70 transition-opacity" style={{ color: C.ink }}>
-                <ArrowLeft className="w-4 h-4" />
-                Back to home
-              </Link>
+              
               <a
                 href="mailto:heyyhephzy@gmail.com"
                 className="inline-flex items-center gap-1.5 font-medium hover:opacity-70 transition-opacity"

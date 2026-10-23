@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Intro, Section, Sub, Points, Figure, Screens, type Shot } from "@/components/case-study/CaseStudy";
+import BackHome from "@/components/BackHome";
 
 export const metadata: Metadata = {
   title: "Osita Farm — UI/UX Case Study | Hephzy",
@@ -39,6 +40,7 @@ const palette = [
 export default function OsitaFarmCaseStudy() {
   return (
     <div className="min-h-screen bg-white text-[#1D1B19] selection:bg-[#D93A2B] selection:text-white">
+      <BackHome />
       <Intro
         title="Osita Farm: a grocery app that lets the produce sell itself"
         tags={["concept", "e-commerce", "illustration"]}
@@ -361,10 +363,7 @@ quality={95}             src={`${IMG}/illustrations.png`}
         </Section>
 
         <div className="max-w-[680px] mx-auto px-6 mt-20 pt-8 border-t border-black/10 flex flex-wrap items-center justify-between gap-4 font-[family-name:var(--font-garamond)] text-xl">
-          <Link href="/" className="inline-flex items-center gap-2 text-[#1D1B19] hover:text-[#D93A2B] transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to home</span>
-          </Link>
+          
           <a
             href="mailto:heyyhephzy@gmail.com"
             className="inline-flex items-center gap-1.5 text-[#1D1B19] hover:text-[#D93A2B] transition-colors"

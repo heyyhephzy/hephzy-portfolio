@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { cheri, grandstander, rubik } from "@/fonts/aptivo";
+import BackHome from "@/components/BackHome";
 
 /*
  * Aptivo has its own look, taken straight from the Figma case study:
@@ -235,6 +236,7 @@ export default function AptivoCaseStudy() {
     <div
       className={`${grandstander.variable} ${rubik.variable} ${cheri.variable} font-[family-name:var(--font-rubik)] min-h-screen bg-[#FFF6EC] text-[#3A2E2A] antialiased selection:bg-[#F56A57] selection:text-white`}
     >
+      <BackHome />
       {/* ───────── Hero, overview and problem: cream ───────── */}
       <div className="bg-[#FFF6EC]">
         <nav className={`${wrap} pt-6 sm:pt-8`}>
@@ -530,10 +532,7 @@ export default function AptivoCaseStudy() {
             </a>
             <div className={`flex flex-wrap items-center gap-x-6 gap-y-2 ${body} ${muted}`}>
               <span>Aptivo • designed in Figma</span>
-              <Link href="/" className="inline-flex items-center gap-1.5 font-medium text-[#3A2E2A] hover:text-[#F56A57] transition-colors">
-                <ArrowLeft className="w-4 h-4" />
-                Back to home
-              </Link>
+              
             </div>
           </div>
         </footer>
