@@ -40,7 +40,9 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="relative mt-12 sm:mt-28 overflow-hidden">
-      
+      {/* Rises into view as the page scrolls to the end (see .footer-rise in globals.css) */}
+      <div className="footer-rise">
+
       {/* Dramatic Top Wave Silhouette in Signature #FF4FA3 Pink */}
       <div className="relative w-full h-20 sm:h-28 text-[#FF4FA3] -mb-1">
         <svg
@@ -51,17 +53,6 @@ export default function Footer() {
         >
           <path d="M0,48L48,58.7C96,69,192,91,288,96C384,101,480,91,576,74.7C672,59,768,37,864,37.3C960,37,1056,59,1152,69.3C1248,80,1344,80,1392,80L1440,80L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
         </svg>
-
-        {/* Mascot in Lifebuoy Floating on the Pink Wave */}
-        <div className="absolute right-10 sm:right-28 -top-8 sm:-top-12 flex flex-col items-center animate-bounce">
-          <div className="relative w-18 h-18 sm:w-24 sm:h-24 rounded-full bg-white dark:bg-stone-900 border-4 border-pink-200 shadow-xl flex items-center justify-center text-3xl sm:text-4xl">
-            <span>🛟</span>
-            <span className="absolute -top-1 -right-1 text-base sm:lg">🕶️</span>
-          </div>
-          <span className="text-[11px] font-mono font-bold px-3 py-0.5 rounded-full bg-white text-[#D6247F] shadow-md -mt-2">
-            Hephzy
-          </span>
-        </div>
       </div>
 
       {/* Dramatic Vibrant Pink Canvas using exact #FF4FA3 to #D6247F palette */}
@@ -204,6 +195,7 @@ export default function Footer() {
 
         </div>
 
+      </div>
       </div>
     </footer>
   );
