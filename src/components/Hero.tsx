@@ -97,8 +97,7 @@ export default function Hero() {
               {/* Preview Resume: placeholder until the PDF/page is ready, then swap this span for a Link/a */}
               <span
                 aria-disabled="true"
-                title="Resume coming soon"
-                className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-sans font-medium bg-[var(--text-main)] text-[var(--bg-main)] shadow-sm cursor-not-allowed"
+                className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-sans font-medium bg-[var(--text-main)] text-[var(--bg-main)] opacity-40 pointer-events-none select-none"
               >
                 Preview Resume
                 <BookOpen className="w-4 h-4" />
