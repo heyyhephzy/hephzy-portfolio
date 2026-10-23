@@ -140,9 +140,7 @@ export default function CinevaCaseStudy() {
           <p className={`${sans} mt-10 sm:mt-14 text-xs sm:text-sm font-semibold uppercase tracking-[0.1em]`} style={{ color: C.coral }}>
             UI case study
           </p>
-          <h1 className={`${display} mt-3 text-[72px] sm:text-[110px] lg:text-[140px] leading-[0.95]`} style={{ color: C.ink }}>
-            cineva
-          </h1>
+          <h1 className="sr-only">Cineva</h1>
           <p className={`${sans} mt-6 max-w-[560px] text-[17px] sm:text-xl leading-[1.6]`} style={{ color: C.inkSoft }}>
             Designing a movie discovery and ticket booking app that takes you from &ldquo;what&rsquo;s showing?&rdquo; to a seat in
             four steps.
@@ -168,8 +166,8 @@ export default function CinevaCaseStudy() {
         </div>
 
         {/* Cover artwork: same image as the homepage card */}
-        <div className={`${wrap} relative pb-16 sm:pb-24`}>
-          <div className="overflow-hidden rounded-[28px]">
+        <div className="relative pb-16 sm:pb-24">
+          <div className="overflow-hidden">
             <Image
               src="/covers/cineva.jpg"
               alt="Cineva cover: dark app screens with movie posters on a black background"
