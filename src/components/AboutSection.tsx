@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { GraduationCap, Sparkles, Layers } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -42,7 +41,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-4 font-mono text-xs">
           <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
             <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-[var(--accent-pink)] mb-2 shadow-sm">
-              <GraduationCap className="w-4 h-4" />
+              <img src="/icons/degree.png" alt="" width={96} height={72} className="w-6 h-auto" />
             </div>
             <span className="block text-[11px] text-[var(--text-subtle)] uppercase">Degree</span>
             <span className="block font-bold text-[var(--text-main)]">B.ENG Mechatronics</span>
@@ -50,7 +49,7 @@ export default function AboutSection() {
 
           <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
             <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-blue-500 mb-2 shadow-sm">
-              <Layers className="w-4 h-4" />
+              <img src="/icons/role.png" alt="" width={120} height={120} className="w-6 h-6 object-contain" />
             </div>
             <span className="block text-[11px] text-[var(--text-subtle)] uppercase">Role</span>
             <span className="block font-bold text-[var(--text-main)]">Product Designer</span>
@@ -58,7 +57,7 @@ export default function AboutSection() {
 
           <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
             <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-purple-500 mb-2 shadow-sm">
-              <Sparkles className="w-4 h-4" />
+              <img src="/icons/craft.png" alt="" width={82} height={63} className="w-6 h-auto" />
             </div>
             <span className="block text-[11px] text-[var(--text-subtle)] uppercase">Craft</span>
             <span className="block font-bold text-[var(--text-main)]">Illustrator</span>
