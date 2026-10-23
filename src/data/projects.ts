@@ -1,5 +1,4 @@
 import React from "react";
-import AptivoCover from "@/components/covers/AptivoCover";
 import OsitaCover from "@/components/covers/OsitaCover";
 import CinevaCover from "@/components/covers/CinevaCover";
 
@@ -43,7 +42,7 @@ export const projects: Project[] = [
       "Brand, mascot and every illustration drawn by me",
     ],
     href: "/work/aptivo",
-    animatedCover: AptivoCover,
+    cover: "/covers/aptivo.webp",
   },
   {
     id: "osita-farm",
