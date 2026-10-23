@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Compass, GraduationCap, Sparkles, Layers } from "lucide-react";
+import { GraduationCap, Sparkles, Layers } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -38,8 +38,8 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* 4 Feature Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-4 font-mono text-xs">
+        {/* 3 Feature Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-4 font-mono text-xs">
           <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
             <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-[var(--accent-pink)] mb-2 shadow-sm">
               <GraduationCap className="w-4 h-4" />
@@ -64,13 +64,6 @@ export default function AboutSection() {
             <span className="block font-bold text-[var(--text-main)]">Illustrator</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[var(--bg-card-subtle)] space-y-1">
-            <div className="w-8 h-8 rounded-lg bg-[var(--bg-card)] flex items-center justify-center text-emerald-500 mb-2 shadow-sm">
-              <Compass className="w-4 h-4" />
-            </div>
-            <span className="block text-[11px] text-[var(--text-subtle)] uppercase">Community</span>
-            <span className="block font-bold text-[var(--text-main)]">Cowrywise Design</span>
-          </div>
         </div>
 
       </div>
