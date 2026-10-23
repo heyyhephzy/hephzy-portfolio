@@ -4,25 +4,26 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, BookOpen, Orbit } from "lucide-react";
 import Image from "next/image";
-import { siClaude, siFigma, siGithub } from "simple-icons";
+import { siClaude, siGithub } from "simple-icons";
+import FigmaLogo from "./FigmaLogo";
 
 import mascot from "../../public/profile mascot/spidey.png";
 
 /** Official brand mark, drawn from its simple-icons path. */
-function BrandIcon({ path, className }: { path: string; className?: string }) {
+function BrandIcon({ path, className, color }: { path: string; className?: string; color?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d={path} />
+    <svg viewBox="0 0 24 24" className={className} aria-hidden stroke="none">
+      <path d={path} fill={color || "currentColor"} />
     </svg>
   );
 }
 
 // Antigravity has no published mark in simple-icons yet, so it keeps a plain icon.
 const tools = [
-  { name: "Claude", icon: <BrandIcon path={siClaude.path} className="w-4 h-4" /> },
-  { name: "Antigravity", icon: <Orbit className="w-4 h-4" /> },
-  { name: "Figma", icon: <BrandIcon path={siFigma.path} className="w-4 h-4" /> },
-  { name: "GitHub", icon: <BrandIcon path={siGithub.path} className="w-4 h-4" /> },
+  { name: "Claude", icon: <BrandIcon path={siClaude.path} className="w-6 h-6" color={`#${siClaude.hex}`} />, color: `#${siClaude.hex}` },
+  { name: "Antigravity", icon: <Orbit className="w-6 h-6" color="#FF5F5F" />, color: "#FF5F5F" },
+  { name: "Figma", icon: <FigmaLogo className="w-6 h-6" />, color: "#000000" },
+  { name: "GitHub", icon: <BrandIcon path={siGithub.path} className="w-6 h-6" color={`#${siGithub.hex}`} />, color: `#${siGithub.hex}` },
 ];
 
 export default function Hero() {
@@ -103,27 +104,18 @@ export default function Hero() {
                 </span>
               </span>
 
-              {/* Tools row: each logo fades/slides in with its own stagger, like nosa's */}
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-                {tools.map((tool, i) => (
-                  <motion.span
-                    key={tool.name}
-                    initial={{ opacity: 0, x: -24 }}
-                    animate={{ opacity: [0, 1, 1, 0], x: [-24, 0, 0, -24] }}
-                    transition={{
-                      duration: 4,
-                      times: [0, 0.15, 0.85, 1],
-                      ease: "easeInOut",
-                      delay: 0.7 + i * 0.18,
-                      repeat: Infinity,
-                      repeatDelay: 1.5,
-                    }}
-                    className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[var(--text-muted)]"
-                  >
-                    {tool.icon}
-                    {tool.name}
-                  </motion.span>
-                ))}
+              {/* Tools row: continuous scrolling marquee of tool icons (CSS animation, same as the Playground conveyors, so it loops without a restart hitch) */}
+              <div className="relative overflow-hidden w-full">
+                <div className="animate-tools-marquee items-center gap-8 whitespace-nowrap">
+                  {tools.concat(tools).map((tool, idx) => (
+                    <span
+                      key={`${tool.name}-${idx}`}
+                      className="inline-flex items-center gap-1.5"
+                    >
+                      {tool.icon}<span className="text-black">{tool.name}</span>
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
