@@ -127,7 +127,20 @@ export default function CinevaCaseStudy() {
           className="absolute rounded-full pointer-events-none"
           style={{ width: 900, height: 700, right: -200, top: -300, background: `radial-gradient(circle, ${C.coral}33, transparent 70%)` }}
         />
-        <div className={`${wrap} relative pt-10 sm:pt-16`}>
+        {/* Cover artwork first, full width on black, like a cinema screen */}
+        <div className="relative bg-black">
+          <Image
+            src="/covers/cineva.jpg"
+            alt="Cineva cover: dark app screens with movie posters on a black background"
+            width={1600}
+            height={1066}
+            priority
+            sizes="100vw"
+            className="w-full h-auto block"
+          />
+        </div>
+
+        <div className={`${wrap} relative pt-12 sm:pt-16`}>
           <Link
             href="/work"
             className={`${sans} inline-flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-opacity`}
@@ -165,20 +178,6 @@ export default function CinevaCaseStudy() {
           </div>
         </div>
 
-        {/* Cover artwork: same image as the homepage card */}
-        <div className="relative pb-16 sm:pb-24">
-          <div className="overflow-hidden">
-            <Image
-              src="/covers/cineva.jpg"
-              alt="Cineva cover: dark app screens with movie posters on a black background"
-              width={1600}
-              height={1066}
-              priority
-              sizes="(min-width: 1440px) 1440px, 100vw"
-              className="w-full h-auto block"
-            />
-          </div>
-        </div>
       </header>
 
       <main>
