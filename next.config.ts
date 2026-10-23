@@ -2,14 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  cacheComponents: true,
+  output: "export",
   // Lets a phone on the same Wi-Fi load the dev server (this computer's address). Dev only.
   allowedDevOrigins: ["192.168.1.8"],
   images: {
-    // 95 is used on case study pages so screenshots stay sharp
-    qualities: [75, 95],
+    // Static export can't use the on-demand image optimizer; images are served as-is.
+    unoptimized: true,
   },
-  partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {
