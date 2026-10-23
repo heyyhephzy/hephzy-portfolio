@@ -1,14 +1,38 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowUp, Mail, Copy, Check, Sparkles, Heart } from "lucide-react";
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
   const [localTime, setLocalTime] = useState("");
+  const riseRef = useRef<HTMLDivElement>(null);
 
   const email = "heyyhephzy@gmail.com";
+
+  // The footer starts 18vh low and rises to its place as its top edge moves up the screen
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const updateRise = () => {
+      const el = riseRef.current;
+      if (!el) return;
+      // Measure the footer itself, not the child we are moving, so the transform doesn't feed back into the maths
+      const top = (el.parentElement ?? el).getBoundingClientRect().top;
+      // Fully risen by the time the footer's top edge is 75% of the way down the screen, so it settles before the page ends
+      const progress = Math.min(1, Math.max(0, (window.innerHeight - top) / (window.innerHeight * 0.25)));
+      el.style.transform = `translateY(${((1 - progress) * 18).toFixed(2)}vh)`;
+    };
+
+    updateRise();
+    window.addEventListener("scroll", updateRise, { passive: true });
+    window.addEventListener("resize", updateRise);
+    return () => {
+      window.removeEventListener("scroll", updateRise);
+      window.removeEventListener("resize", updateRise);
+    };
+  }, []);
 
   useEffect(() => {
     const updateTime = () => {
@@ -41,7 +65,7 @@ export default function Footer() {
   return (
     <footer id="contact" className="relative mt-12 sm:mt-28 overflow-hidden">
       {/* Rises into view as the page scrolls to the end (see .footer-rise in globals.css) */}
-      <div className="footer-rise">
+      <div ref={riseRef}>
 
       {/* Dramatic Top Wave Silhouette in Signature #FF4FA3 Pink */}
       <div className="relative w-full h-20 sm:h-28 text-[#FF4FA3] -mb-1">
