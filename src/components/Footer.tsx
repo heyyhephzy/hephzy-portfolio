@@ -8,7 +8,7 @@ export default function Footer() {
   const [copied, setCopied] = useState(false);
   const [localTime, setLocalTime] = useState("");
 
-  const email = "hephzibahyahaya@gmail.com";
+  const email = "heyyhephzy@gmail.com";
 
   useEffect(() => {
     const updateTime = () => {
@@ -174,7 +174,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="mailto:hephzibahyahaya@gmail.com"
+                href="mailto:heyyhephzy@gmail.com"
                 className="w-10 h-10 rounded-full bg-white/15 hover:bg-white text-white hover:text-[#D6247F] border border-white/25 flex items-center justify-center font-bold text-xs transition-all hover:scale-110 shadow-sm"
                 title="Email"
               >

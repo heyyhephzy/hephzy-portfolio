@@ -366,10 +366,10 @@ quality={95}             src={`${IMG}/illustrations.png`}
             <span>Back to all work</span>
           </Link>
           <a
-            href="mailto:hephzibahyahaya@gmail.com"
+            href="mailto:heyyhephzy@gmail.com"
             className="inline-flex items-center gap-1.5 text-[#1D1B19] hover:text-[#D93A2B] transition-colors"
           >
-            <span>hephzibahyahaya@gmail.com</span>
+            <span>heyyhephzy@gmail.com</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>

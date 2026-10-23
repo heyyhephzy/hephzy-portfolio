@@ -160,7 +160,7 @@ export default function Navbar() {
 
           {/* Let's Talk CTA */}
           <a
-            href="mailto:hephzibahyahaya@gmail.com"
+            href="mailto:heyyhephzy@gmail.com"
             className="flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-[11px] sm:text-xs font-mono font-medium text-[var(--bg-main)] bg-[var(--text-main)] hover:bg-[var(--accent-pink)] hover:text-white transition-colors shadow-sm whitespace-nowrap"
           >
             <span>Get in touch</span>

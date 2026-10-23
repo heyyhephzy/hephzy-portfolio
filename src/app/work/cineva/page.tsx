@@ -651,11 +651,11 @@ export default function CinevaCaseStudy() {
                 Back to all work
               </Link>
               <a
-                href="mailto:hephzibahyahaya@gmail.com"
+                href="mailto:heyyhephzy@gmail.com"
                 className="inline-flex items-center gap-1.5 font-medium hover:opacity-70 transition-opacity"
                 style={{ color: C.ink }}
               >
-                hephzibahyahaya@gmail.com
+                heyyhephzy@gmail.com
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
