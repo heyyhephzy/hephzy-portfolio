@@ -2,12 +2,12 @@ import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
 
 // The footer scene: a street signpost on the left. Positions are percentages of the scene, so it scales with the footer.
 const boards = [
-  { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "48.2%", left: "4.1%" },
-  { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "45.5%", left: "22.7%" },
-  { label: "About", caption: "The person behind the work", href: "/#about", side: "right", dark: false, top: "59%", left: "22.9%" },
-  { label: "Resume", caption: "My experience", href: null, side: "left", dark: true, top: "68.3%", left: "3.9%" },
-  { label: "LinkedIn", caption: "Let's connect", href: "https://linkedin.com", side: "right", dark: true, top: "76.7%", left: "22.7%", external: true },
-  { label: "X", caption: "Say hi", href: "https://x.com/heyhephzy", side: "left", dark: false, top: "84.5%", left: "4.1%", external: true },
+  { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "48.2%", left: "2%" },
+  { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "45.5%", left: "23.5%" },
+  { label: "About", caption: "The person behind the work", href: "/#about", side: "right", dark: false, top: "59%", left: "23.5%" },
+  { label: "Resume", caption: "My experience", href: null, side: "left", dark: true, top: "68.3%", left: "2%" },
+  { label: "LinkedIn", caption: "Let's connect", href: "https://linkedin.com", side: "right", dark: true, top: "76.7%", left: "23.5%", external: true },
+  { label: "X", caption: "Say hi", href: "https://x.com/heyhephzy", side: "left", dark: false, top: "84.5%", left: "2%", external: true },
 ];
 
 function Cloud({ className, style }: { className?: string; style?: React.CSSProperties }) {
@@ -36,10 +36,10 @@ function Board({ board }: { board: (typeof boards)[number] }) {
         <Arrow className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
       </span>
       <span className={`flex min-w-0 flex-col ${board.side === "left" ? "items-start text-left" : "items-end text-right"}`}>
-        <span className={`font-sans font-extrabold leading-none text-sm sm:text-[22px] ${board.dark && board.label !== "LinkedIn" ? "text-[#FF4FA3]" : ""}`}>
+        <span className={`font-sans font-extrabold leading-none text-base sm:text-[26px] ${board.dark && board.label !== "LinkedIn" ? "text-[#FF4FA3]" : ""}`}>
           {board.label}
         </span>
-        <span className="mt-0.5 text-[9px] sm:text-xs font-medium leading-tight opacity-80">
+        <span className="mt-0.5 text-[10px] sm:text-sm font-medium leading-tight opacity-80">
           {board.caption}
         </span>
       </span>
@@ -47,7 +47,7 @@ function Board({ board }: { board: (typeof boards)[number] }) {
   );
 
   const frame = `absolute flex rounded-xl bg-[#141214] p-[3px] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-transform duration-150`;
-  const style = { top: board.top, left: board.left, width: "17.2%", height: "7.8%" };
+  const style = { top: board.top, left: board.left, width: board.side === "left" ? "19%" : "20%", height: "9%" };
 
   if (!board.href) {
     return (
