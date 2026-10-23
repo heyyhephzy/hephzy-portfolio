@@ -160,7 +160,7 @@ export default function Signpost() {
         width={155}
         height={150}
         className="absolute h-auto"
-        style={{ top: "82%", left: "42%", width: "8.5%" }}
+        style={{ top: "77%", left: "89%", width: "7%" }}
       />
 
       {/* Clouds */}
