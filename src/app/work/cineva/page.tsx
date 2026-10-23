@@ -469,7 +469,6 @@ export default function CinevaCaseStudy() {
               </Body>
             </div>
             <div className="flex gap-6 sm:gap-10 justify-center">
-              <Screen src="home-dark" alt="Cineva home screen" className="w-[42%] max-w-[300px]" />
               <Screen src="details-dark" alt="Cineva movie details screen" className="w-[42%] max-w-[300px] mt-10" />
             </div>
           </div>
@@ -500,7 +499,6 @@ export default function CinevaCaseStudy() {
           <div className="grid lg:grid-cols-[1fr_1fr] gap-10 sm:gap-16 items-start">
             <div className="flex gap-6 justify-center lg:order-1">
               <Screen src="seats-dark" alt="Cineva seat selection screen, dark mode" className="w-[60%] max-w-[340px]" />
-              <Screen src="seats-light" alt="Cineva seat selection screen, light mode" className="w-[42%] max-w-[260px] mt-16" />
             </div>
             <div className="lg:order-2">
               <Eyebrow>09 &mdash; Seat selection</Eyebrow>
