@@ -530,9 +530,9 @@ export default function AptivoCaseStudy() {
             </a>
             <div className={`flex flex-wrap items-center gap-x-6 gap-y-2 ${body} ${muted}`}>
               <span>Aptivo • designed in Figma</span>
-              <Link href="/work" className="inline-flex items-center gap-1.5 font-medium text-[#3A2E2A] hover:text-[#F56A57] transition-colors">
+              <Link href="/" className="inline-flex items-center gap-1.5 font-medium text-[#3A2E2A] hover:text-[#F56A57] transition-colors">
                 <ArrowLeft className="w-4 h-4" />
-                Back to all work
+                Back to home
               </Link>
             </div>
           </div>

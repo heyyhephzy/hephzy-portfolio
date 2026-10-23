@@ -142,12 +142,12 @@ export default function CinevaCaseStudy() {
 
         <div className={`${wrap} relative pt-12 sm:pt-16`}>
           <Link
-            href="/work"
+            href="/"
             className={`${sans} inline-flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-opacity`}
             style={{ color: C.inkSoft }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to all work
+            Back to home
           </Link>
 
           <p className={`${sans} mt-10 sm:mt-14 text-xs sm:text-sm font-semibold uppercase tracking-[0.1em]`} style={{ color: C.coral }}>
@@ -646,9 +646,9 @@ export default function CinevaCaseStudy() {
             </p>
 
             <div className="mt-14 pt-8 border-t flex flex-wrap items-center justify-between gap-4 max-w-[680px] mx-auto text-base" style={{ borderColor: "rgba(17,17,22,0.08)" }}>
-              <Link href="/work" className="inline-flex items-center gap-2 font-medium hover:opacity-70 transition-opacity" style={{ color: C.ink }}>
+              <Link href="/" className="inline-flex items-center gap-2 font-medium hover:opacity-70 transition-opacity" style={{ color: C.ink }}>
                 <ArrowLeft className="w-4 h-4" />
-                Back to all work
+                Back to home
               </Link>
               <a
                 href="mailto:heyyhephzy@gmail.com"

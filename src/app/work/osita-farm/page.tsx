@@ -361,9 +361,9 @@ quality={95}             src={`${IMG}/illustrations.png`}
         </Section>
 
         <div className="max-w-[680px] mx-auto px-6 mt-20 pt-8 border-t border-black/10 flex flex-wrap items-center justify-between gap-4 font-[family-name:var(--font-garamond)] text-xl">
-          <Link href="/work" className="inline-flex items-center gap-2 text-[#1D1B19] hover:text-[#D93A2B] transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-[#1D1B19] hover:text-[#D93A2B] transition-colors">
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to all work</span>
+            <span>Back to home</span>
           </Link>
           <a
             href="mailto:heyyhephzy@gmail.com"
