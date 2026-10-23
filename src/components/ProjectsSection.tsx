@@ -12,7 +12,7 @@ export default function ProjectsSection() {
   return (
     <section id="work" className="py-14 sm:py-20 site-wrap">
       {/* Section Header */}
-      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 mb-8 sm:mb-12 pb-4 border-b border-[var(--border-subtle)]">
+      <div className="flex flex-col items-center text-center mb-8 sm:mb-12 pb-4 border-b border-[var(--border-subtle)]">
         <div>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text-main)]">
             Selected Works
@@ -21,9 +21,6 @@ export default function ProjectsSection() {
             Product design, systems &amp; illustration
           </p>
         </div>
-        <span className="text-xs font-mono text-[var(--text-muted)]">
-          {featured.length} Featured Projects
-        </span>
       </div>
 
       <WorkGrid projects={featured} />
