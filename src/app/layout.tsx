@@ -35,7 +35,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hephzy — Yahaya Hephzibah | Product Designer & Illustrator",
+  title: "Hephzy - Product Designer & Illustrator",
   description:
     "Portfolio of Yahaya Hephzibah (Hephzy) — Product Designer (UI/UX) & Illustrator with a background in Mechatronics Engineering. Crafting thoughtful digital products and expressive visual worlds.",
   keywords: [
