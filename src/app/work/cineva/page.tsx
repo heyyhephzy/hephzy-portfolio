@@ -571,7 +571,9 @@ export default function CinevaCaseStudy() {
                   {row.label}
                 </p>
                 <div className="mt-4 grid grid-cols-3 gap-3 sm:flex sm:gap-4 sm:min-w-max">
-                  {["splash", "home", "details", "showtimes", "seats", "checkout", "ticket"].map((s) => (
+                  {["splash", "home", "details", "showtimes", "seats", "checkout", "ticket"]
+                    .filter((s) => !(row.suffix === "dark" && s === "home") && !(row.suffix === "light" && s === "seats"))
+                    .map((s) => (
                     <Screen
                       key={s}
                       src={`${s}-${row.suffix}`}
