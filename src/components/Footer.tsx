@@ -56,7 +56,7 @@ export default function Footer() {
   const socials = [
     { label: "Bē", title: "Behance", href: "https://www.behance.net/hephzibahyahaya" },
     { label: "𝕏", title: "X (@heyhephzy)", href: "https://x.com/heyhephzy" },
-    { label: "in", title: "LinkedIn", href: "https://linkedin.com" },
+    { label: "in", title: "LinkedIn", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/" },
     { label: "@", title: "Email", href: `mailto:${email}` },
   ];
 

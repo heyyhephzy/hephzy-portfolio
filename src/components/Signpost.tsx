@@ -6,7 +6,7 @@ const boards = [
   { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "45.5%", left: "23.5%" },
   { label: "About", caption: "The person behind the work", href: "/#about", side: "right", dark: false, top: "59%", left: "23.5%" },
   { label: "Resume", caption: "My experience", href: null, side: "left", dark: true, top: "68.3%", left: "2%" },
-  { label: "LinkedIn", caption: "Let's connect", href: "https://linkedin.com", side: "right", dark: true, top: "76.7%", left: "23.5%", external: true },
+  { label: "LinkedIn", caption: "Let's connect", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/", side: "right", dark: true, top: "76.7%", left: "23.5%", external: true },
   { label: "X", caption: "Say hi", href: "https://x.com/heyhephzy", side: "left", dark: false, top: "84.5%", left: "2%", external: true },
 ];
 
