@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowUp, Mail, Copy, Check, Sparkles, Heart } from "lucide-react";
 import Signpost from "@/components/Signpost";
@@ -8,24 +8,8 @@ import Signpost from "@/components/Signpost";
 export default function Footer() {
   const [copied, setCopied] = useState(false);
   const [localTime, setLocalTime] = useState("");
-  const footerRef = useRef<HTMLElement>(null);
 
   const email = "heyyhephzy@gmail.com";
-
-  // The footer is fixed underneath the page, so the page publishes its height to leave room for it
-  useEffect(() => {
-    const el = footerRef.current;
-    if (!el) return;
-
-    const setHeight = () => {
-      document.documentElement.style.setProperty("--footer-h", `${el.offsetHeight}px`);
-    };
-
-    setHeight();
-    const observer = new ResizeObserver(setHeight);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const updateTime = () => {
@@ -56,7 +40,7 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={footerRef} id="contact" className="relative md:fixed md:inset-x-0 md:bottom-0 z-0 overflow-hidden">
+    <footer id="contact" className="relative overflow-hidden">
 
       {/* Dramatic Top Wave Silhouette in Signature #FF4FA3 Pink */}
       <div className="relative w-full h-20 sm:h-24 text-[#FF4FA3] -mb-1">
@@ -80,8 +64,8 @@ export default function Footer() {
         <div className="site-wrap space-y-8 sm:space-y-10 relative z-10">
           
           {/* Top Dramatic Headline */}
-          <div className="grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-7 space-y-5">
+          <div className="space-y-12">
+          <div className="space-y-5">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold bg-white/20 backdrop-blur-md border border-white/25 text-pink-50">
               <Sparkles className="w-3.5 h-3.5 text-amber-200" />
               <span>HAVE A BOLD PROJECT IN MIND?</span>
@@ -121,7 +105,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="md:col-span-5 flex justify-center md:justify-end">
+          <div className="flex justify-center">
             <Signpost />
           </div>
         </div>
