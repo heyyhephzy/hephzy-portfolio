@@ -1,5 +1,4 @@
 import React from "react";
-import OsitaCover from "@/components/covers/OsitaCover";
 import CinevaCover from "@/components/covers/CinevaCover";
 
 export interface Project {
@@ -62,7 +61,7 @@ export const projects: Project[] = [
       "Every illustration hand-drawn by me",
     ],
     href: "/work/osita-farm",
-    animatedCover: OsitaCover,
+    cover: "/covers/osita-farm.webp",
   },
   {
     id: "cineva",
