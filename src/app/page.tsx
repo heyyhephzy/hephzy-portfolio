@@ -21,7 +21,7 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content: sits above the fixed footer and slides away to reveal it */}
-      <main className="flex-grow relative z-10 bg-[var(--bg-main)]" style={{ marginBottom: "var(--footer-h, 0px)" }}>
+      <main className="flex-grow relative z-10 bg-[var(--bg-main)] md:mb-[var(--footer-h,0px)]">
         {/* Breezy Hero (Inspired by Toyo's Creative Space) */}
         <Hero />
 

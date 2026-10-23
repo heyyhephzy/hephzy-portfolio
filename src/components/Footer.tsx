@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowUp, Mail, Copy, Check, Sparkles, Heart } from "lucide-react";
+import Signpost from "@/components/Signpost";
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
@@ -55,7 +56,7 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={footerRef} id="contact" className="fixed inset-x-0 bottom-0 z-0 overflow-hidden">
+    <footer ref={footerRef} id="contact" className="relative md:fixed md:inset-x-0 md:bottom-0 z-0 overflow-hidden">
 
       {/* Dramatic Top Wave Silhouette in Signature #FF4FA3 Pink */}
       <div className="relative w-full h-20 sm:h-24 text-[#FF4FA3] -mb-1">
@@ -70,7 +71,7 @@ export default function Footer() {
       </div>
 
       {/* Dramatic Vibrant Pink Canvas using exact #FF4FA3 to #D6247F palette */}
-      <div className="bg-gradient-to-br from-[#FF4FA3] via-[#D6247F] to-[#880E4F] text-white py-8 sm:py-14 relative">
+      <div className="bg-[#1A0B17] text-white py-8 sm:py-14 relative">
         
         {/* Soft Ambient Radiance */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
@@ -79,7 +80,8 @@ export default function Footer() {
         <div className="site-wrap space-y-8 sm:space-y-10 relative z-10">
           
           {/* Top Dramatic Headline */}
-          <div className="max-w-3xl space-y-5">
+          <div className="grid md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-7 space-y-5">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold bg-white/20 backdrop-blur-md border border-white/25 text-pink-50">
               <Sparkles className="w-3.5 h-3.5 text-amber-200" />
               <span>HAVE A BOLD PROJECT IN MIND?</span>
@@ -119,7 +121,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Middle Row: Telemetry, Navigation, and Socials */}
+          <div className="md:col-span-5 flex justify-center md:justify-end">
+            <Signpost />
+          </div>
+        </div>
+
+          {/* Middle Row: Telemetry and Socials */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-6 sm:pt-8 border-t border-white/20 items-center justify-between text-xs font-mono">
             
             {/* Lagos Real-Time Clock */}
@@ -131,19 +138,6 @@ export default function Footer() {
               <span className="text-white font-medium bg-white/15 px-2.5 py-1 rounded-full whitespace-nowrap">
                 {localTime || "1:00 PM"}
               </span>
-            </div>
-
-            {/* Quick Links */}
-            <div className="md:col-span-3 flex items-center gap-5 text-pink-100">
-              <Link href="/#work" className="hover:text-white transition-colors">
-                Works
-              </Link>
-              <Link href="/#playground" className="hover:text-white transition-colors">
-                Playground
-              </Link>
-              <Link href="/#about" className="hover:text-white transition-colors">
-                About
-              </Link>
             </div>
 
             {/* Social Circles */}
