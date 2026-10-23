@@ -29,6 +29,13 @@ export function Intro({
     <header className="bg-[#0E0E0E] text-[#EDEBE8]">
       <nav className="border-b border-white/10">
         <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 font-serif text-lg text-white/80 hover:text-white transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
+            <span>Back to home</span>
+          </Link>
           <Link href="/#work" aria-label="Close case study" className="text-white/80 hover:text-white transition-colors">
             <X className="w-6 h-6" strokeWidth={1.5} />
           </Link>
