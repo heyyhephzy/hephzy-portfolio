@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Crimson_Pro, Inter, Caveat, JetBrains_Mono, EB_Garamond } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const crimsonPro = Crimson_Pro({
   variable: "--font-crimson",
@@ -72,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${crimsonPro.variable} ${inter.variable} ${caveat.variable} ${jetbrainsMono.variable} ${ebGaramond.variable} scroll-smooth`}
+      className={`${crimsonPro.variable} ${inter.variable} ${caveat.variable} ${jetbrainsMono.variable} ${ebGaramond.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -84,6 +85,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen overflow-x-clip bg-[var(--bg-main)] text-[var(--text-main)] font-sans antialiased transition-colors duration-300">
+        <SmoothScroll />
         {children}
       </body>
     </html>
