@@ -70,13 +70,13 @@ export default function Footer() {
       </div>
 
       {/* Dramatic Vibrant Pink Canvas using exact #FF4FA3 to #D6247F palette */}
-      <div className="bg-gradient-to-br from-[#FF4FA3] via-[#D6247F] to-[#880E4F] text-white py-10 sm:py-14 relative">
+      <div className="bg-gradient-to-br from-[#FF4FA3] via-[#D6247F] to-[#880E4F] text-white py-8 sm:py-14 relative">
         
         {/* Soft Ambient Radiance */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-10 left-10 w-72 h-72 bg-purple-900/20 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="site-wrap space-y-10 relative z-10">
+        <div className="site-wrap space-y-8 sm:space-y-10 relative z-10">
           
           {/* Top Dramatic Headline */}
           <div className="max-w-3xl space-y-5">
@@ -120,7 +120,7 @@ export default function Footer() {
           </div>
 
           {/* Middle Row: Telemetry, Navigation, and Socials */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-8 border-t border-white/20 items-center justify-between text-xs font-mono">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-6 sm:pt-8 border-t border-white/20 items-center justify-between text-xs font-mono">
             
             {/* Lagos Real-Time Clock */}
             <div className="md:col-span-5 flex items-center gap-2.5">
@@ -128,7 +128,7 @@ export default function Footer() {
               <span className="font-bold tracking-wider uppercase text-pink-50">
                 Port Harcourt, Nigeria (WAT):
               </span>
-              <span className="text-white font-medium bg-white/15 px-2.5 py-1 rounded-full">
+              <span className="text-white font-medium bg-white/15 px-2.5 py-1 rounded-full whitespace-nowrap">
                 {localTime || "1:00 PM"}
               </span>
             </div>
