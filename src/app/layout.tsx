@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Yahaya Hephzibah", url: "https://x.com/heyhephzy" }],
   openGraph: {
-    title: "Hephzy — Product Designer & Illustrator",
+    title: "Hephzy - Product Designer & Illustrator",
     description:
       "Crafting intuitive digital products with an engineer's precision and an illustrator's touch.",
     type: "website",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@heyhephzy",
-    title: "Hephzy — Product Designer & Illustrator",
+    title: "Hephzy - Product Designer & Illustrator",
     description:
       "Crafting intuitive digital products with an engineer's precision and an illustrator's touch.",
   },
