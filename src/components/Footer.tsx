@@ -95,6 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="space-y-6">
+          <div className="space-y-6 md:mb-10">
           <div className="flex flex-wrap items-center gap-3 font-mono text-xs font-bold uppercase tracking-wider">
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-600 animate-pulse" />
             <span>Port Harcourt, Nigeria (WAT):</span>
@@ -114,6 +115,7 @@ export default function Footer() {
                 {social.label}
               </a>
             ))}
+          </div>
           </div>
 
           <div className="flex flex-col gap-4 border-t-2 border-[#141214] pt-5 font-mono text-xs sm:flex-row sm:items-center sm:justify-between md:border-white/40 md:pt-3 md:text-white">
