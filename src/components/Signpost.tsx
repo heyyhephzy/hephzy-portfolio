@@ -2,12 +2,12 @@ import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
 
 // The footer scene: a street signpost on the left. Positions are percentages of the scene, so it scales with the footer.
 const boards = [
-  { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "48.2%", left: "2%" },
-  { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "45.5%", left: "23.5%" },
-  { label: "About", caption: "The person behind the work", href: "/#about", side: "right", dark: false, top: "59%", left: "23.5%" },
-  { label: "Resume", caption: "My experience", href: null, side: "left", dark: true, top: "68.3%", left: "2%" },
-  { label: "LinkedIn", caption: "Let's connect", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/", side: "right", dark: true, top: "76.7%", left: "23.5%", external: true },
-  { label: "X", caption: "Say hi", href: "https://x.com/heyhephzy", side: "left", dark: false, top: "84.5%", left: "2%", external: true },
+  { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "48.2%", left: "1.5%" },
+  { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "45.5%", left: "22.3%" },
+  { label: "About", caption: "The person behind the work", href: "/#about", side: "right", dark: false, top: "59%", left: "22.3%" },
+  { label: "Resume", caption: "My experience", href: null, side: "left", dark: true, top: "68.3%", left: "1.5%" },
+  { label: "LinkedIn", caption: "Let's connect", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/", side: "right", dark: true, top: "76.7%", left: "22.3%", external: true },
+  { label: "X", caption: "Say hi", href: "https://x.com/heyhephzy", side: "left", dark: false, top: "84.5%", left: "1.5%", external: true },
 ];
 
 function Cloud({ className, style }: { className?: string; style?: React.CSSProperties }) {
@@ -47,7 +47,7 @@ function Board({ board }: { board: (typeof boards)[number] }) {
   );
 
   const frame = `absolute flex rounded-xl bg-[#141214] p-[3px] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-transform duration-150`;
-  const style = { top: board.top, left: board.left, width: board.side === "left" ? "19%" : "20%", height: "9%" };
+  const style = { top: board.top, left: board.left, width: board.side === "left" ? "20.5%" : "20%", height: "9%" };
 
   if (!board.href) {
     return (
