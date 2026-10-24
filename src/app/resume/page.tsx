@@ -28,13 +28,6 @@ export default function ResumePage() {
             className="h-auto w-full rounded-lg border border-[#141214]/15 bg-white shadow-md"
           />
         ))}
-        <a
-          href="/resume.pdf"
-          download="Hephzibah-Yahaya-Design-CV.pdf"
-          className="self-center font-sans text-sm font-medium underline underline-offset-4 hover:opacity-70"
-        >
-          Download PDF
-        </a>
       </div>
 
     </main>
