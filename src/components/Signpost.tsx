@@ -1,75 +1,34 @@
 import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
 
-// The footer scene: a street signpost on the left. Positions are percentages of the scene, so it scales with the footer.
+// The footer scene. The desktop art is the signpost SVG (public/signpost.svg); the boards are invisible links placed over it.
+// Positions are percentages of the scene, so the links line up with the art at any width.
 const boards = [
-  { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "48.2%", left: "1.5%" },
-  { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "45.5%", left: "22.3%" },
-  { label: "About", caption: "The person behind the work", href: "/#about", side: "right", dark: false, top: "59%", left: "22.3%" },
-  { label: "Resume", caption: "My experience", href: null, side: "left", dark: true, top: "68.3%", left: "1.5%" },
-  { label: "LinkedIn", caption: "Let's connect", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/", side: "right", dark: true, top: "76.7%", left: "22.3%", external: true },
-  { label: "X", caption: "Say hi", href: "https://x.com/heyhephzy", side: "left", dark: false, top: "84.5%", left: "1.5%", external: true },
+  { label: "Playground", caption: "Experiments & side projects", href: "/#playground", side: "left", dark: false, top: "15.5%", left: "4%" },
+  { label: "Work", caption: "Case studies", href: "/#work", side: "right", dark: true, top: "4.3%", left: "22.6%" },
+  { label: "About", caption: "The person behind the work", href: "/#about", side: "right", dark: false, top: "28.1%", left: "22.8%" },
+  { label: "Resume", caption: "My experience", href: null, side: "left", dark: true, top: "41.5%", left: "3.8%" },
+  { label: "LinkedIn", caption: "Let's connect", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/", side: "right", dark: true, top: "53.8%", left: "22.6%", external: true },
+  { label: "X", caption: "Say hi", href: "https://x.com/heyhephzy", side: "left", dark: false, top: "65.1%", left: "4%", external: true },
 ];
 
-function Cloud({ className, style }: { className?: string; style?: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 84 34" className={`absolute ${className ?? ""}`} style={style} aria-hidden>
-      <path
-        d="M14 30 C4 30 3 20 11 18 C10 8 22 4 29 10 C33 2 47 2 51 11 C58 8 68 13 66 22 C75 22 78 30 70 30 Z"
-        fill="#FFFFFF"
-        stroke="#141214"
-        strokeWidth="2.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function Board({ board }: { board: (typeof boards)[number] }) {
-  const Arrow = board.side === "right" ? ArrowRight : ArrowLeft;
-  const inner = (
-    <span
-      className={`flex h-full w-full items-center gap-2 rounded-lg px-2.5 sm:px-3 ${
-        board.side === "left" ? "flex-row" : "flex-row-reverse"
-      } ${board.dark ? "bg-[#141214] text-white" : "bg-[#FFF6FA] text-[#141214]"}`}
-    >
-      <span className="flex h-6 w-6 sm:h-7 sm:w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]">
-        <Arrow className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-      </span>
-      <span className={`flex min-w-0 flex-col ${board.side === "left" ? "items-start text-left" : "items-end text-right"}`}>
-        <span className={`font-sans font-extrabold leading-none text-base sm:text-[26px] ${board.dark && board.label !== "LinkedIn" ? "text-[#FF4FA3]" : ""}`}>
-          {board.label}
-        </span>
-        <span className="mt-0.5 text-[10px] sm:text-sm font-medium leading-tight opacity-80">
-          {board.caption}
-        </span>
-      </span>
-    </span>
-  );
-
-  const frame = `absolute flex rounded-xl bg-[#141214] p-[3px] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-transform duration-150`;
-  const style = { top: board.top, left: board.left, width: board.side === "left" ? "20.5%" : "20%", height: "9%" };
+function Hotspot({ board }: { board: (typeof boards)[number] }) {
+  const className = "absolute rounded-xl hover:bg-white/10 transition-colors";
+  const style = { top: board.top, left: board.left, width: "17.4%", height: "12.2%" };
 
   if (!board.href) {
-    return (
-      <span aria-disabled="true" className={`${frame} cursor-default`} style={style}>
-        {inner}
-      </span>
-    );
+    return <span aria-label={`${board.label} (coming soon)`} aria-disabled="true" className={className} style={style} />;
   }
-
   return (
     <a
       href={board.href}
+      aria-label={board.label}
       target={board.external ? "_blank" : undefined}
       rel={board.external ? "noopener noreferrer" : undefined}
-      className={`${frame} hover:-translate-y-0.5`}
+      className={className}
       style={style}
-    >
-      {inner}
-    </a>
+    />
   );
 }
-
 
 // Phone layout: the same boards stacked down a centred pole, so the text stays readable.
 function MobileBoard({ board }: { board: (typeof boards)[number] }) {
@@ -129,27 +88,14 @@ export default function Signpost() {
   return (
     <>
       <MobileSignpost />
-    <div className="relative hidden md:block w-full md:h-[min(100vh,calc(100vw*0.678))] bg-[#FF8CC6]">
-      {/* Pole */}
-      <div className="absolute top-[39%] bottom-0 w-[10px] rounded-sm bg-[#141214]" style={{ left: "calc(21.9% - 5px)" }} />
 
-
-      {/* Clouds */}
-      <Cloud style={{ top: "63%", left: "3.9%", width: "7.5%" }} />
-      <Cloud style={{ top: "73.5%", left: "34.4%", width: "6%" }} />
-
-      {boards.map((board) => (
-        <Board key={board.label} board={board} />
-      ))}
-
-      {/* You are here */}
-      <div className="absolute flex items-end gap-1.5" style={{ top: "91%", left: "24%" }}>
-        <MapPin className="w-5 h-5 text-[#141214]" fill="#FF4FA3" />
-        <span className="rounded-full bg-[#141214] px-2.5 py-1 text-[10px] sm:text-xs font-medium text-white -translate-y-1">
-          You are here
-        </span>
+      {/* Desktop: the signpost art, with links over the boards */}
+      <div className="relative hidden md:block w-full aspect-[2700/1248]">
+        <img src="/signpost.svg" alt="" className="absolute inset-0 h-full w-full" />
+        {boards.map((board) => (
+          <Hotspot key={board.label} board={board} />
+        ))}
       </div>
-    </div>
     </>
   );
 }
