@@ -17,17 +17,21 @@ export default function ResumePage() {
         </Link>
       </header>
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 py-6 sm:px-6 sm:py-10">
-        {[1, 2, 3].map((page) => (
-          <img
-            key={page}
-            src={`/resume/page-${page}.webp`}
-            alt={`Resume, page ${page} of 3`}
-            width={1275}
-            height={1650}
-            className="h-auto w-full rounded-lg border border-[#141214]/15 bg-white shadow-md"
-          />
-        ))}
+      <iframe
+        src="/resume.pdf#view=FitH"
+        title="Resume"
+        className="hidden min-h-[85vh] w-full flex-1 md:block"
+      />
+
+      <div className="flex flex-col items-center gap-3 px-6 py-10 md:hidden">
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-sans text-base font-medium underline underline-offset-4 hover:opacity-70"
+        >
+          Open resume (PDF)
+        </a>
       </div>
 
     </main>
