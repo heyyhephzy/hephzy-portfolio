@@ -35,6 +35,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-icon.png",
+  },
   metadataBase: new URL("https://heyhephzy.com"),
   title: "Hephzy - Product Designer & Illustrator",
   description:
