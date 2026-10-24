@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Download } from "lucide-react";
 import Image from "next/image";
 import { siClaude, siGithub } from "simple-icons";
 import FigmaLogo from "./FigmaLogo";
@@ -94,17 +94,30 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="pt-4 flex flex-wrap items-center gap-x-6 gap-y-4"
             >
-              {/* Preview Resume: placeholder until the PDF/page is ready, then swap this span for a Link/a */}
-              <span
-                aria-disabled="true"
-                className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-sans font-medium bg-[var(--text-main)] text-[var(--bg-main)] opacity-40 pointer-events-none select-none"
-              >
-                Preview Resume
-                <BookOpen className="w-4 h-4" />
-                <span className="text-[9px] uppercase tracking-wider bg-white/15 rounded-full px-1.5 py-0.5">
-                  Soon
-                </span>
-              </span>
+              {/* Resume: the PDF opens in a new tab, and the download button saves it */}
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-3.5 sm:px-4 py-2 font-sans text-xs sm:text-sm font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none transition-transform duration-150"
+                >
+                  <span>Preview Resume</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]">
+                    <BookOpen className="w-3.5 h-3.5" />
+                  </span>
+                </a>
+                <a
+                  href="/resume.pdf"
+                  download="Hephzibah-Yahaya-Design-CV.pdf"
+                  className="inline-flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#FFF6FA] px-3.5 sm:px-4 py-2 font-sans text-xs sm:text-sm font-bold text-[#141214] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none transition-transform duration-150"
+                >
+                  <span>Download</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]">
+                    <Download className="w-3.5 h-3.5" />
+                  </span>
+                </a>
+              </div>
 
               {/* Tools row: continuous scrolling marquee of tool icons (CSS animation, same as the Playground conveyors, so it loops without a restart hitch) */}
               <div className="relative overflow-hidden w-full">
