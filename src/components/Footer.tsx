@@ -118,8 +118,7 @@ export default function Footer() {
           </div>
           </div>
 
-          <div className="flex flex-col gap-4 border-t-2 border-[#141214] pt-5 font-mono text-xs sm:flex-row sm:items-center sm:justify-between md:border-white/40 md:pt-3 md:text-white">
-            <span>&copy; 2026 Yahaya Hephzibah (Hephzy)</span>
+          <div className="flex flex-col gap-4 border-t-2 border-[#141214] pt-5 font-mono text-xs sm:flex-row sm:items-center sm:justify-end md:border-white/40 md:pt-3 md:text-white">
             <button
               onClick={scrollToTop}
               className="inline-flex items-center gap-2.5 self-start rounded-xl border-[3px] border-[#141214] bg-[#FFF6FA] px-3 py-1.5 font-mono text-xs font-bold text-[#141214] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none sm:self-auto"
