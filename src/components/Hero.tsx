@@ -97,7 +97,7 @@ export default function Hero() {
               {/* Resume: the PDF opens in a new tab, and the download button saves it */}
               <div className="flex flex-wrap items-center gap-3">
                 <a
-                  href="/resume.pdf"
+                  href="/resume"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-3.5 sm:px-4 py-2 font-sans text-xs sm:text-sm font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none transition-transform duration-150"
