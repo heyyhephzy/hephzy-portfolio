@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { BookOpen, Download } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import Image from "next/image";
 import { siClaude, siGithub } from "simple-icons";
 import FigmaLogo from "./FigmaLogo";
@@ -105,16 +105,6 @@ export default function Hero() {
                   <span>Preview Resume</span>
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]">
                     <BookOpen className="w-3.5 h-3.5" />
-                  </span>
-                </a>
-                <a
-                  href="/resume.pdf"
-                  download="Hephzibah-Yahaya-Design-CV.pdf"
-                  className="inline-flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#FFF6FA] px-3.5 sm:px-4 py-2 font-sans text-xs sm:text-sm font-bold text-[#141214] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none transition-transform duration-150"
-                >
-                  <span>Download</span>
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]">
-                    <Download className="w-3.5 h-3.5" />
                   </span>
                 </a>
               </div>
