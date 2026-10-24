@@ -19,8 +19,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("hephzy-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const startDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+    // Light by default for everyone; dark only if the visitor chose it with the toggle
+    const startDark = savedTheme === "dark";
     document.documentElement.classList.toggle("dark", startDark);
     // Sync the toggle icon after mount (deferred to avoid a cascading render)
     const themeFrame = requestAnimationFrame(() => setIsDark(startDark));
