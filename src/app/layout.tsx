@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Crimson_Pro, Inter, Caveat, JetBrains_Mono, EB_Garamond } from "next/font/google";
 import "./globals.css";
+import ScrollToTopOnLoad from "@/components/ScrollToTopOnLoad";
 import SmoothScroll from "@/components/SmoothScroll";
 
 const crimsonPro = Crimson_Pro({
@@ -104,6 +105,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen overflow-x-clip bg-[var(--bg-main)] text-[var(--text-main)] font-sans antialiased transition-colors duration-300">
         <SmoothScroll />
+        <ScrollToTopOnLoad />
         {children}
       </body>
     </html>
