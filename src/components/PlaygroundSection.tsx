@@ -100,7 +100,7 @@ function ConveyorTrack({
             tabIndex={idx >= items.length ? -1 : 0}
             className="w-min flex-shrink-0 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-hover)] p-2 sm:p-3 shadow-sm hover:shadow-md transition-all duration-200 group cursor-pointer text-left"
           >
-            <div className="relative rounded-xl overflow-hidden bg-[var(--bg-card-subtle)]">
+            <div className="relative w-min rounded-xl overflow-hidden bg-[var(--bg-card-subtle)]">
               <Image
                 src={item.image}
                 alt={item.title}
