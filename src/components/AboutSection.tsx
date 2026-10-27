@@ -26,10 +26,10 @@ export default function AboutSection() {
 
           <div className="space-y-4 text-base sm:text-lg text-[var(--text-muted)] font-sans leading-relaxed">
             <p>
-              I studied <strong>Mechatronics Engineering</strong>, where I developed a deep appreciation for systems architecture, circuit logic, and state machines. That background shapes how I approach product design: making sure complex workflows stay simple, responsive, and stress-free for real users.
+              I&apos;m Yahaya Hephzibah, but everyone calls me Hephzy. I studied <strong>Mechatronics Engineering</strong>, so I&apos;ve always loved systems, circuit logic, and state machines, the kind of stuff that only works when every piece knows its job. That background shapes how I design products. I like taking complicated workflows and making them feel simple, responsive, and stress-free for the people actually using them.
             </p>
             <p>
-              As an <strong>Illustrator</strong> and <strong>Designer</strong> at <strong>Cowrywise Ambassadors</strong>, I balance that engineering discipline with expressive visual craft — giving digital products distinct character, charm, and human warmth.
+              But I&apos;ve always been just as drawn to the expressive side of things. I&apos;m an <strong>Illustrator</strong> and <strong>Designer</strong> at <strong>Cowrywise Ambassadors</strong>, where I get to pair that engineering discipline with a lot of visual craft, giving digital products real character, charm, and human warmth.
             </p>
           </div>
         </div>
