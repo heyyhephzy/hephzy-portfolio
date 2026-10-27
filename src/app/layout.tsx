@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Crimson_Pro, Inter, Caveat, JetBrains_Mono, EB_Garamond, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import ScrollToTopOnLoad from "@/components/ScrollToTopOnLoad";
 import SmoothScroll from "@/components/SmoothScroll";
 
@@ -105,7 +106,9 @@ export default function RootLayout({
     >
       <head>
         {/* Runs before paint: hides the welcome intro for returning visitors (?intro replays it) */}
-        <script
+        <Script
+        id="hephzy-intro-seen"
+        strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `try{var k="hephzy-intro-seen";if(/[?&]intro\\b/.test(location.search)){localStorage.removeItem(k)}else if(localStorage.getItem(k)){document.documentElement.classList.add("intro-seen")}}catch(e){}`,
           }}
