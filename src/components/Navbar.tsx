@@ -14,8 +14,8 @@ export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const eyeLeftRef = useRef<SVGCircleElement | null>(null);
-  const eyeRightRef = useRef<SVGCircleElement | null>(null);
+  const eyeLeftRef = useRef<SVGGElement | null>(null);
+  const eyeRightRef = useRef<SVGGElement | null>(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("hephzy-theme");
@@ -31,28 +31,24 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Eye-tracking interaction inspired by Uxora
+    // Eyes follow the cursor, a little, inside the face
     const handleMouseMove = (e: MouseEvent) => {
-      const updateEye = (pupil: SVGCircleElement | null, cx: number, cy: number) => {
-        if (!pupil) return;
-        const rect = pupil.getBoundingClientRect();
-        const eyeCenterX = rect.left + rect.width / 2;
-        const eyeCenterY = rect.top + rect.height / 2;
-
-        const dx = e.clientX - eyeCenterX;
-        const dy = e.clientY - eyeCenterY;
+      const moveEye = (eye: SVGGElement | null, svg: SVGSVGElement | null) => {
+        if (!eye || !svg) return;
+        const rect = eye.getBoundingClientRect();
+        const dx = e.clientX - (rect.left + rect.width / 2);
+        const dy = e.clientY - (rect.top + rect.height / 2);
+        const distance = Math.min(1.6, Math.hypot(dx, dy) / 60);
         const angle = Math.atan2(dy, dx);
-        const distance = Math.min(2.5, Math.hypot(dx, dy) / 40);
-
-        const offsetX = Math.cos(angle) * distance;
-        const offsetY = Math.sin(angle) * distance;
-
-        pupil.setAttribute("cx", String(cx + offsetX));
-        pupil.setAttribute("cy", String(cy + offsetY));
+        // The eye is drawn in mascot units, so convert the screen move into those units
+        const unitsPerPx = 323 / svg.getBoundingClientRect().height;
+        const x = Math.cos(angle) * distance * unitsPerPx;
+        const y = Math.sin(angle) * distance * unitsPerPx;
+        eye.setAttribute("transform", `translate(${x.toFixed(2)} ${y.toFixed(2)})`);
       };
-
-      updateEye(eyeLeftRef.current, 10, 10);
-      updateEye(eyeRightRef.current, 22, 10);
+      const svg = eyeLeftRef.current?.ownerSVGElement ?? null;
+      moveEye(eyeLeftRef.current, svg);
+      moveEye(eyeRightRef.current, svg);
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
@@ -92,21 +88,20 @@ export default function Navbar() {
           className="flex items-center gap-2 group cursor-pointer"
           title="Hephzy"
         >
-          {/* Interactive Vector Eye Mascot */}
-          <svg
-            width="32"
-            height="20"
-            viewBox="0 0 32 20"
-            className="text-[var(--text-main)] group-hover:scale-105 transition-transform"
-          >
-            {/* Left Eye */}
-            <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <circle ref={eyeLeftRef} cx="10" cy="10" r="2.8" fill="var(--accent-pink)" />
-
-            {/* Right Eye */}
-            <circle cx="22" cy="10" r="7" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <circle ref={eyeRightRef} cx="22" cy="10" r="2.8" fill="var(--accent-pink)" />
-          </svg>
+          {/* Hephzy mascot: the body is an image, the eyes are drawn over it so they can follow the cursor */}
+          <span className="relative inline-block h-11 w-10 group-hover:scale-105 transition-transform">
+            <img src="/logo-heph-body.svg" alt="" className="block h-full w-full" />
+            <svg viewBox="0 0 294 323" className="absolute inset-0 h-full w-full" aria-hidden="true">
+              <g ref={eyeLeftRef}>
+                <circle cx="124.7" cy="141.6" r="16.7" fill="#000" />
+                <circle cx="133.2" cy="135.6" r="2" fill="#FFF9FB" />
+              </g>
+              <g ref={eyeRightRef}>
+                <circle cx="161.2" cy="140.5" r="16.7" fill="#000" />
+                <circle cx="169.7" cy="134.5" r="2" fill="#FFF9FB" />
+              </g>
+            </svg>
+          </span>
 
           <span className="font-serif text-xl font-bold tracking-tight text-[var(--text-main)]">
             Hephzy
