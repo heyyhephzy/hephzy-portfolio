@@ -103,7 +103,7 @@ export default function Navbar() {
             </svg>
           </span>
 
-          <span className="font-serif text-xl font-bold tracking-tight text-[var(--text-main)]">
+          <span className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-[var(--text-main)]">
             Hephzy
           </span>
         </Link>
