@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 
 // The new hero: the Bubblegum & Butter banner, used as the SVG artwork and centred.
 export default function BannerHero() {
@@ -25,13 +25,26 @@ export default function BannerHero() {
           <p>I&rsquo;m a designer who draws, and an engineer who got lost on the way to the workshop.</p>
           <p className="text-sm sm:text-base">Hephzy &middot; Product Designer &amp; Illustrator</p>
         </div>
-        <Link
-          href="/#work"
-          className="inline-flex items-center gap-2 rounded-xl border-[3px] border-[var(--hero-ink)] bg-[#FF8CC6] px-4 py-2 font-sans text-sm font-bold text-[#1C0B18] shadow-[3px_3px_0_0_var(--hero-shadow)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none"
-        >
-          <span>See my work</span>
-          <ArrowRight className="w-4 h-4" />
-        </Link>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/#work"
+            className="inline-flex items-center gap-2 rounded-xl border-[3px] border-[var(--hero-ink)] bg-[#FF8CC6] px-4 py-2 font-sans text-sm font-bold text-[#1C0B18] shadow-[3px_3px_0_0_var(--hero-shadow)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none"
+          >
+            <span>See my work</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <a
+            href="/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-3.5 sm:px-4 py-2 font-sans text-sm font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none transition-transform duration-150"
+          >
+            <span>Preview Resume</span>
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF8CC6] text-[#141214]">
+              <BookOpen className="w-3.5 h-3.5" />
+            </span>
+          </a>
+        </div>
       </div>
     </section>
   );
