@@ -9,9 +9,9 @@ export default function BannerHero() {
       <img
         src="/banner.svg"
         alt=""
-        width={1500}
-        height={350}
-        className="h-auto w-full max-w-[1400px]"
+        width={870}
+        height={325}
+        className="h-auto w-full max-w-[1200px]"
       />
 
       <div className="mt-6 flex flex-col items-center gap-5">
