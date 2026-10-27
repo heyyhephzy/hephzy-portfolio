@@ -24,7 +24,7 @@ export default function BannerHero() {
         <p className="font-sans text-base text-[var(--text-muted)] sm:text-lg">Product Designer &amp; Illustrator</p>
         <Link
           href="/#work"
-          className="inline-flex items-center gap-2 rounded-xl border-[3px] border-[#1C0B18] bg-[#FF8CC6] px-4 py-2 font-sans text-sm font-bold text-[#1C0B18] shadow-[3px_3px_0_0_#1C0B18] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none"
+          className="inline-flex items-center gap-2 rounded-xl border-[3px] border-[var(--text-main)] bg-[#FF8CC6] px-4 py-2 font-sans text-sm font-bold text-[#1C0B18] shadow-[3px_3px_0_0_var(--text-main)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none"
         >
           <span>See my work</span>
           <ArrowRight className="w-4 h-4" />
