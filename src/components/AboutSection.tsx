@@ -5,7 +5,7 @@ import React from "react";
 export default function AboutSection() {
   return (
     <section id="about" className="py-14 sm:py-20 site-wrap">
-      <div className="rounded-3xl bg-[var(--bg-card)] border border-[var(--border-subtle)] p-5 sm:p-12 shadow-sm space-y-8">
+      <div className="rounded-3xl bg-[var(--bg-card)] p-5 sm:p-12 shadow-sm space-y-8">
         
         {/* Header */}
         <div className="flex items-center justify-between pb-6 border-b border-[var(--border-subtle)]">
