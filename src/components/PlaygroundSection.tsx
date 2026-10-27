@@ -104,7 +104,6 @@ function ConveyorTrack({
               <Image
                 src={item.image}
                 alt={item.title}
-                placeholder="blur"
                 sizes="320px"
                 className="h-28 sm:h-44 lg:h-56 w-auto max-w-none group-hover:scale-105 transition-transform duration-300"
               />
@@ -183,7 +182,6 @@ export default function PlaygroundSection() {
               <Image
                 src={selectedItem.image}
                 alt={selectedItem.title}
-                placeholder="blur"
                 sizes="92vw"
                 className="rounded-xl w-auto h-auto max-w-[calc(92vw-2rem)] max-h-[75vh]"
               />
