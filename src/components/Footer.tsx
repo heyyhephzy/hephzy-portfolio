@@ -54,7 +54,7 @@ export default function Footer() {
             <h2 className="text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-[96px]">
               <span className="block">Let&apos;s make the</span>
               <span className="block">
-                <span className="text-[#FF4FA3]">fun bits</span> together.
+                <span className="text-[#FF8CC6]">fun bits</span> together.
               </span>
             </h2>
 

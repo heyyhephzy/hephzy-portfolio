@@ -103,7 +103,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-3.5 sm:px-4 py-2 font-sans text-xs sm:text-sm font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none transition-transform duration-150"
                 >
                   <span>Preview Resume</span>
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF8CC6] text-[#141214]">
                     <BookOpen className="w-3.5 h-3.5" />
                   </span>
                 </a>
@@ -136,7 +136,7 @@ export default function Hero() {
               className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-subtle)] p-6 shadow-lg flex flex-col items-center justify-center text-center group hover:scale-105 transition-transform duration-300"
             >
               {/* Round avatar: mascot cropped to head and shoulders */}
-              <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden bg-[#FFE8F2] ring-4 ring-[var(--bg-main)] shadow-[0_0_0_5px_var(--accent-pink-border)] mb-3">
+              <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden bg-[#FF8CC6] ring-4 ring-[var(--bg-main)] shadow-[0_0_0_5px_var(--accent-pink-border)] mb-3">
                 <Image
                   src={mascot}
                   alt="Hephzy's Spider-Gwen mascot"

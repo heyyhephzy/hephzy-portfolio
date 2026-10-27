@@ -39,11 +39,11 @@ function MobileBoard({ board }: { board: (typeof boards)[number] }) {
         board.side === "left" ? "flex-row" : "flex-row-reverse text-right"
       } ${board.dark ? "bg-[#141214] text-white" : "bg-[#FFF6FA] text-[#141214]"}`}
     >
-      <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]">
+      <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#FF8CC6] text-[#141214]">
         <Arrow className="w-4 h-4" />
       </span>
       <span className="flex flex-col">
-        <span className={`text-lg font-extrabold leading-none ${board.dark && board.label !== "LinkedIn" ? "text-[#FF4FA3]" : ""}`}>
+        <span className={`text-lg font-extrabold leading-none ${board.dark && board.label !== "LinkedIn" ? "text-[#FF8CC6]" : ""}`}>
           {board.label}
         </span>
         <span className="mt-1 text-xs font-medium opacity-80">{board.caption}</span>
@@ -76,7 +76,7 @@ function MobileSignpost() {
           <MobileBoard key={board.label} board={board} />
         ))}
         <div className="relative z-10 mt-2 flex items-center gap-1.5">
-          <MapPin className="w-5 h-5 text-[#141214]" fill="#FF4FA3" />
+          <MapPin className="w-5 h-5 text-[#141214]" fill="#FF8CC6" />
           <span className="rounded-full bg-[#141214] px-2.5 py-1 text-xs font-medium text-white">You are here</span>
         </div>
       </div>

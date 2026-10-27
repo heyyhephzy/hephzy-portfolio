@@ -28,9 +28,9 @@
     
     /* Stephanie Obi's exact signature pink palette */
     --accent-pink: #FF8CC6;
-    --accent-pink-hover: #D6247F;
-    --accent-pink-soft: #FFE8F2;
-    --accent-pink-border: rgba(255, 79, 163, 0.3);
+    --accent-pink-hover: #FF8CC6;
+    --accent-pink-soft: #FF8CC6;
+    --accent-pink-border: #FF8CC6;
   }
 
   .dark {
@@ -44,9 +44,9 @@
     --text-subtle: #6D6775;
     
     --accent-pink: #FF8CC6;
-    --accent-pink-hover: #FF6EB3;
-    --accent-pink-soft: rgba(255, 79, 163, 0.15);
-    --accent-pink-border: rgba(255, 79, 163, 0.4);
+    --accent-pink-hover: #FF8CC6;
+    --accent-pink-soft: #FF8CC6;
+    --accent-pink-border: #FF8CC6;
   }
 }
 
@@ -88,7 +88,7 @@
   right: 0;
   bottom: 2px;
   height: 32%;
-  background: var(--accent-pink-soft);
+  background: transparent;
   border-bottom: 2px solid var(--accent-pink);
   z-index: -1;
   border-radius: 2px;

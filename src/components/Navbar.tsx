@@ -157,7 +157,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-3 sm:px-4 py-1.5 sm:py-2 font-serif text-sm sm:text-base font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none transition-transform duration-150 whitespace-nowrap"
           >
             <span>Get in touch</span>
-            <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]"><ArrowUpRight className="w-3.5 h-3.5" /></span>
+            <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#FF8CC6] text-[#141214]"><ArrowUpRight className="w-3.5 h-3.5" /></span>
           </a>
 
           {/* Mobile menu button */}
