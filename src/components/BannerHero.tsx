@@ -21,7 +21,10 @@ export default function BannerHero() {
       </div>
 
       <div className="mt-6 flex flex-col items-center gap-5">
-        <p className="font-sans text-base text-[var(--text-muted)] sm:text-lg">Product Designer &amp; Illustrator</p>
+        <div className="flex flex-col items-center gap-1 font-sans text-base text-[var(--text-muted)] sm:text-lg">
+          <p>&ldquo;I&rsquo;m a designer who draws, and an engineer who got lost on the way to the workshop.&rdquo;</p>
+          <p className="text-sm sm:text-base">&mdash; Hephzy, Product Designer &amp; Illustrator</p>
+        </div>
         <Link
           href="/#work"
           className="inline-flex items-center gap-2 rounded-xl border-[3px] border-[var(--hero-ink)] bg-[#FF8CC6] px-4 py-2 font-sans text-sm font-bold text-[#1C0B18] shadow-[3px_3px_0_0_var(--hero-shadow)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none"
