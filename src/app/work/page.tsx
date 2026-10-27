@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="min-h-screen flex flex-col selection:bg-[var(--accent-pink)] selection:text-white">
+    <div className="min-h-screen flex flex-col selection:bg-[var(--accent-pink)] selection:text-white heading-font">
       <Navbar />
 
       <main className="flex-grow">

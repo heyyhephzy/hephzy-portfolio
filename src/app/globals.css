@@ -63,6 +63,14 @@
   font-family: var(--font-mono), monospace;
 }
 
+/* Homepage and Work-index headings only (scoped by .heading-font; case studies are not affected) */
+.heading-font h1,
+.heading-font h2,
+.heading-font h3,
+.heading-font h4 {
+  font-family: var(--font-heading), system-ui, sans-serif !important;
+}
+
 .font-handwriting {
   font-family: var(--font-caveat), cursive;
 }

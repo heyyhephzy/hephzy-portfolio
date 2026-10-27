@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Crimson_Pro, Inter, Caveat, JetBrains_Mono, EB_Garamond } from "next/font/google";
+import { Crimson_Pro, Inter, Caveat, JetBrains_Mono, EB_Garamond, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import ScrollToTopOnLoad from "@/components/ScrollToTopOnLoad";
 import SmoothScroll from "@/components/SmoothScroll";
+
+// Homepage and Work-index headings: Bricolage Grotesque
+const headingFont = Bricolage_Grotesque({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const crimsonPro = Crimson_Pro({
   variable: "--font-crimson",
@@ -91,7 +98,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${crimsonPro.variable} ${inter.variable} ${caveat.variable} ${jetbrainsMono.variable} ${ebGaramond.variable}`}
+      className={`${headingFont.variable} ${crimsonPro.variable} ${inter.variable} ${caveat.variable} ${jetbrainsMono.variable} ${ebGaramond.variable}`}
       suppressHydrationWarning
     >
       <head>

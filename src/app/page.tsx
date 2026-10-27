@@ -18,7 +18,7 @@ const SHOW_LEGACY_HERO = false;
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col selection:bg-[var(--accent-pink)] selection:text-white" id="top">
+    <div className="min-h-screen flex flex-col selection:bg-[var(--accent-pink)] selection:text-white heading-font" id="top">
       {/* First-visit welcome: "The Catch" swings in, then hands over to the site */}
       {SHOW_INTRO && <IntroSplash />}
       {/* Floating Pill Navigation with Eye Mascot */}
