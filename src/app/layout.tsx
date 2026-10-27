@@ -45,9 +45,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   icons: {
     icon: [
-      { url: "/tab-16-v7.png", type: "image/png", sizes: "16x16" },
-      { url: "/tab-32-v7.png", type: "image/png", sizes: "32x32" },
-      { url: "/favicon-v7.ico", sizes: "48x48" },
+      { url: "/tab-16-v9.png", type: "image/png", sizes: "16x16" },
+      { url: "/tab-32-v9.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-v9.ico", sizes: "48x48" },
       { url: "/icon-192-v6.png", type: "image/png", sizes: "192x192" },
       { url: "/icon-512-v6.png", type: "image/png", sizes: "512x512" },
     ],
