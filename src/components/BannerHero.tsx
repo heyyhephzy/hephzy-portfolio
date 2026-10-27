@@ -11,7 +11,7 @@ export default function BannerHero() {
         alt=""
         width={870}
         height={325}
-        className="h-auto w-[calc(100%+3rem)] max-w-none -mx-6 sm:w-full sm:mx-0 sm:max-w-[1200px]"
+        className="h-auto w-full max-w-[1200px]"
       />
 
       <div className="mt-6 flex flex-col items-center gap-5">
