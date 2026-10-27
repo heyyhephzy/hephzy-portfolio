@@ -128,7 +128,7 @@ export default function PlaygroundSection() {
   const [selectedItem, setSelectedItem] = useState<PlaygroundItem | null>(null);
 
   return (
-    <section id="playground" className="py-14 sm:py-20 bg-pink-grain relative overflow-hidden">
+    <section id="playground" className="py-14 sm:py-20 bg-[#FF8CC6] relative overflow-hidden">
 
       {/* Header: dark ink text so it reads on the pink in both themes */}
       <div className="site-wrap mb-8 sm:mb-12">
