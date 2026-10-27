@@ -46,7 +46,7 @@ export default function Footer() {
       {/* Flower garland hanging from the top edge */}
       <img src="/footer-garland.svg" alt="" aria-hidden="true" className="block h-auto w-full" />
 
-      <div className="site-wrap pb-8 pt-8 sm:pb-10 md:pt-12">
+      <div className="site-wrap flex flex-col pb-10 pt-10 sm:pb-12 md:min-h-[760px] md:pb-16 md:pt-16">
         <div className="grid gap-6 md:grid-cols-[200px_1fr] md:gap-12">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#FF8CC6]">( Say hi )</p>
 
@@ -58,7 +58,7 @@ export default function Footer() {
               </span>
             </h2>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4">
+            <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 md:mt-16">
               <button
                 onClick={copyEmail}
                 className="inline-flex items-center gap-3 font-sans text-2xl font-medium underline decoration-2 underline-offset-8 transition-colors hover:text-[#FF8CC6] md:text-3xl"
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[#2E2A2C] pt-6 font-sans text-sm sm:gap-x-10 md:mt-16">
+        <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[#2E2A2C] pt-8 font-sans text-sm sm:gap-x-10">
           {links.map((link) => {
             const isExternal = link.href.startsWith("http");
             return (
@@ -94,7 +94,7 @@ export default function Footer() {
           })}
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 font-mono text-xs text-[#A8939D] sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <div className="mt-6 flex flex-col gap-3 md:mt-auto font-mono text-xs text-[#A8939D] sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <p>© 2026 Hephzy · Designed &amp; drawn by me</p>
           <button onClick={scrollToTop} className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-colors hover:text-[#FF8CC6]">
             <span>Back to top</span>
