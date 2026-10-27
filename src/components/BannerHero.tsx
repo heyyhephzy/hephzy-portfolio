@@ -11,8 +11,14 @@ export default function BannerHero() {
         alt=""
         width={870}
         height={325}
-        className="h-auto w-full max-w-[1200px]"
+        className="hidden h-auto w-full max-w-[1200px] md:block"
       />
+      {/* Phones: the same four phrases of the banner, stacked one above another */}
+      <div className="flex w-full flex-col items-center gap-2 md:hidden" aria-hidden="true">
+        {["line-1", "line-2", "line-3", "line-4"].map((line) => (
+          <img key={line} src={`/hero/${line}.svg`} alt="" className="h-auto w-full" />
+        ))}
+      </div>
 
       <div className="mt-6 flex flex-col items-center gap-5">
         <p className="font-sans text-base text-[var(--text-muted)] sm:text-lg">Product Designer &amp; Illustrator</p>
