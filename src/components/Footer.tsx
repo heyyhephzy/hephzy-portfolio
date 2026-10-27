@@ -9,7 +9,6 @@ const links = [
   { label: "Behance", href: "https://www.behance.net/hephzibahyahaya" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/" },
   { label: "X", href: "https://x.com/heyhephzy" },
-  { label: "+234 704 721 0135", href: "tel:+2347047210135" },
 ];
 
 export default function Footer() {
