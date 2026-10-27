@@ -45,13 +45,13 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   icons: {
     icon: [
-      { url: "/icon-16.png?v=5", type: "image/png", sizes: "16x16" },
-      { url: "/icon-32.png?v=5", type: "image/png", sizes: "32x32" },
-      { url: "/favicon.ico?v=5", sizes: "48x48" },
-      { url: "/icon-192.png?v=5", type: "image/png", sizes: "192x192" },
-      { url: "/icon-512.png?v=5", type: "image/png", sizes: "512x512" },
+      { url: "/tab-16-v6.png", type: "image/png", sizes: "16x16" },
+      { url: "/tab-32-v6.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-v6.ico", sizes: "48x48" },
+      { url: "/icon-192-v6.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512-v6.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: "/apple-icon.png?v=5",
+    apple: "/apple-icon-v6.png",
   },
   metadataBase: new URL("https://heyhephzy.com"),
   title: "Hephzy - Product Designer & Illustrator",
