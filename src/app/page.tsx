@@ -3,6 +3,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import BannerHero from "@/components/BannerHero";
 import ProjectsSection from "@/components/ProjectsSection";
 import PlaygroundSection from "@/components/PlaygroundSection";
 import AboutSection from "@/components/AboutSection";
@@ -11,6 +12,9 @@ import IntroSplash from "@/components/IntroSplash";
 
 // Welcome intro is switched off for now. Set to true to bring it back.
 const SHOW_INTRO = false;
+
+// The old hero is kept in components/Hero.tsx. Set this to true to bring it back.
+const SHOW_LEGACY_HERO = false;
 
 export default function Home() {
   return (
@@ -23,7 +27,7 @@ export default function Home() {
       {/* Main Content: sits above the fixed footer and slides away to reveal it */}
       <main className="flex-grow relative z-10 bg-[var(--bg-main)] md:mb-[var(--footer-h,0px)]">
         {/* Breezy Hero (Inspired by Toyo's Creative Space) */}
-        <Hero />
+        {SHOW_LEGACY_HERO ? <Hero /> : <BannerHero />}
 
         {/* Selected Works (Clean, visual, punchy cards) */}
         <ProjectsSection />

@@ -17,17 +17,17 @@
 
 @layer base {
   :root {
-    --bg-main: #FAF9F6;
+    --bg-main: #FFF9FB;
     --bg-card: #FFFFFF;
     --bg-card-subtle: #F5F2ED;
     --border-subtle: rgba(28, 25, 23, 0.08);
     --border-hover: rgba(28, 25, 23, 0.2);
-    --text-main: #181619;
+    --text-main: #1C0B18;
     --text-muted: #6B6570;
     --text-subtle: #98929E;
     
     /* Stephanie Obi's exact signature pink palette */
-    --accent-pink: #FF4FA3;
+    --accent-pink: #FF8CC6;
     --accent-pink-hover: #D6247F;
     --accent-pink-soft: #FFE8F2;
     --accent-pink-border: rgba(255, 79, 163, 0.3);
@@ -43,7 +43,7 @@
     --text-muted: #9E98A5;
     --text-subtle: #6D6775;
     
-    --accent-pink: #FF4FA3;
+    --accent-pink: #FF8CC6;
     --accent-pink-hover: #FF6EB3;
     --accent-pink-soft: rgba(255, 79, 163, 0.15);
     --accent-pink-border: rgba(255, 79, 163, 0.4);
