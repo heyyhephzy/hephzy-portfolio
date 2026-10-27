@@ -15,9 +15,6 @@ export default function AboutSection() {
               About Me
             </p>
           </div>
-          <span className="font-mono text-xs text-[var(--text-muted)]">
-            Port Harcourt, Nigeria 📍
-          </span>
         </div>
 
         {/* Core Story */}

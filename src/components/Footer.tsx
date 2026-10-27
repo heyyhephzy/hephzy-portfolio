@@ -8,7 +8,6 @@ const email = "heyyhephzy@gmail.com";
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
-  const [localTime, setLocalTime] = useState("");
   const footerRef = useRef<HTMLElement>(null);
 
   // On desktop the footer sits fixed underneath the page, so the page publishes its height to leave room for it
@@ -24,23 +23,6 @@ export default function Footer() {
     const observer = new ResizeObserver(setHeight);
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const options: Intl.DateTimeFormatOptions = {
-        timeZone: "Africa/Lagos",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true,
-      };
-      setLocalTime(new Date().toLocaleTimeString("en-US", options));
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
   }, []);
 
   const copyEmail = () => {
@@ -96,12 +78,6 @@ export default function Footer() {
 
         <div className="space-y-6">
           <div className="space-y-6 md:mb-10">
-          <div className="flex flex-wrap items-center gap-3 font-mono text-xs font-bold uppercase tracking-wider">
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-600 animate-pulse" />
-            <span>Port Harcourt, Nigeria (WAT):</span>
-            <span className="rounded-full bg-[#141214] px-2.5 py-1 text-white">{localTime || "--:--:--"}</span>
-          </div>
-
           <div className="flex items-center gap-2.5">
             {socials.map((social) => (
               <a

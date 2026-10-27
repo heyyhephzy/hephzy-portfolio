@@ -55,7 +55,6 @@ export const metadata: Metadata = {
     "UI/UX Designer",
     "Illustrator",
     "Mechatronics",
-    "Nigeria",
     "Portfolio",
   ],
   authors: [{ name: "Yahaya Hephzibah", url: "https://x.com/heyhephzy" }],

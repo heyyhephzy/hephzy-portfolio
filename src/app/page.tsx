@@ -35,7 +35,7 @@ export default function Home() {
         <AboutSection />
       </main>
 
-      {/* Illustrated Wave Footer, fixed underneath the page, with Lagos Clock & Socials */}
+      {/* Illustrated Wave Footer, fixed underneath the page, with socials */}
       <Footer />
     </div>
   );

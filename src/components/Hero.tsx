@@ -149,9 +149,6 @@ export default function Hero() {
 
               <div className="space-y-0.5 font-mono text-xs">
                 <span className="font-bold text-[var(--text-main)]">Hephzy</span>
-                <span className="block text-[11px] text-[var(--text-muted)]">
-                  Port Harcourt, Nigeria 📍
-                </span>
               </div>
 
               <span className="absolute -bottom-3 text-[10px] font-mono px-3 py-1 rounded-full bg-[var(--bg-main)] border border-[var(--border-subtle)] text-[var(--text-muted)] shadow-sm">
