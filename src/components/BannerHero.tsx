@@ -22,8 +22,8 @@ export default function BannerHero() {
 
       <div className="mt-6 flex flex-col items-center gap-5">
         <div className="flex flex-col items-center gap-1 font-sans text-base text-[var(--text-muted)] sm:text-lg">
-          <p>&ldquo;I&rsquo;m a designer who draws, and an engineer who got lost on the way to the workshop.&rdquo;</p>
-          <p className="text-sm sm:text-base">&mdash; Hephzy, Product Designer &amp; Illustrator</p>
+          <p>I&rsquo;m a designer who draws, and an engineer who got lost on the way to the workshop.</p>
+          <p className="text-sm sm:text-base">Hephzy &middot; Product Designer &amp; Illustrator</p>
         </div>
         <Link
           href="/#work"
