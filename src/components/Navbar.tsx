@@ -51,12 +51,12 @@ export default function Navbar() {
       moveEye(eyeRightRef.current, svg);
     };
 
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("pointermove", handleMouseMove, { passive: true });
 
     return () => {
       cancelAnimationFrame(themeFrame);
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("pointermove", handleMouseMove);
     };
   }, []);
 
