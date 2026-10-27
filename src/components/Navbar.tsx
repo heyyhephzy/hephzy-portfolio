@@ -90,7 +90,7 @@ export default function Navbar() {
         >
           {/* Hephzy mascot: the body is an image, the eyes are drawn over it so they can follow the cursor */}
           <span className="relative inline-block aspect-[294/323] h-11">
-            <img src="/logo-heph-body.svg" alt="" className="block h-full w-full" />
+            <img src="/logo-nav-v2.svg" alt="" className="block h-full w-full" />
             <svg viewBox="0 0 294 323" className="absolute inset-0 h-full w-full" aria-hidden="true">
               <g ref={eyeLeftRef}>
                 <path d="M141.39 141.068C141.669 150.282 134.425 157.979 125.211 158.258C115.996 158.537 108.3 151.293 108.021 142.079C107.742 132.864 114.985 125.168 124.2 124.889C133.414 124.609 141.11 131.853 141.39 141.068ZM133.767 135.577C134.146 136.824 134.586 137.305 135.541 137.998C134.576 138.522 134.215 138.982 133.903 140.057C133.674 139.223 133.405 138.782 132.452 138.091C133.351 137.379 133.567 136.78 133.767 135.577ZM132.068 135.629L132.377 135.619L132.386 135.928L132.077 135.938L132.068 135.629Z" fillRule="evenodd" clipRule="evenodd" fill="#000" />
