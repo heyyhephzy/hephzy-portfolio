@@ -4,14 +4,14 @@ import { ArrowRight } from "lucide-react";
 // The new hero: the Bubblegum & Butter banner, used as the SVG artwork and centred.
 export default function BannerHero() {
   return (
-    <section className="site-wrap flex flex-col items-center justify-center pt-28 pb-16 text-center max-md:min-h-[100svh] sm:pt-32 sm:pb-24 md:pt-36">
+    <section className="site-wrap flex flex-col items-center pt-28 pb-12 text-center sm:pt-32 sm:pb-24 md:pt-36">
       <h1 className="sr-only">I design products &amp; draw the fun bits.</h1>
       <img
         src="/banner.svg"
         alt=""
         width={870}
         height={325}
-        className="h-auto w-full max-w-[1200px]"
+        className="h-auto w-[calc(100%+3rem)] max-w-none -mx-6 sm:w-full sm:mx-0 sm:max-w-[1200px]"
       />
 
       <div className="mt-6 flex flex-col items-center gap-5">
