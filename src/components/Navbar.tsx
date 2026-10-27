@@ -89,7 +89,7 @@ export default function Navbar() {
           title="Hephzy"
         >
           {/* Hephzy mascot: the body is an image, the eyes are drawn over it so they can follow the cursor */}
-          <span className="relative inline-block h-11 w-10 group-hover:scale-105 transition-transform">
+          <span className="relative inline-block aspect-[294/323] h-12 sm:h-14 group-hover:scale-105 transition-transform">
             <img src="/logo-heph-body.svg" alt="" className="block h-full w-full" />
             <svg viewBox="0 0 294 323" className="absolute inset-0 h-full w-full" aria-hidden="true">
               <g ref={eyeLeftRef}>
