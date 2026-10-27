@@ -138,7 +138,7 @@ export default function PlaygroundSection() {
               The Playground
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#181619]">
-              Vector studies &amp; <span className="subtle-highlight font-serif italic">explorations</span>.
+              Vector studies &amp; <span className="subtle-highlight font-serif">explorations</span>.
             </h2>
             <p className="text-sm text-[#181619]/80 mt-1.5 max-w-xl font-sans">
               Experiments and character studies.

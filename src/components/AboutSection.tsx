@@ -21,7 +21,7 @@ export default function AboutSection() {
         <div className="space-y-5 max-w-3xl">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text-main)]">
             Bridging analytical systems with{" "}
-            <span className="subtle-highlight font-serif italic">expressive illustration</span>.
+            <span className="subtle-highlight font-serif">expressive illustration</span>.
           </h2>
 
           <div className="space-y-4 text-base sm:text-lg text-[var(--text-muted)] font-sans leading-relaxed">

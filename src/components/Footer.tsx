@@ -56,7 +56,7 @@ export default function Footer() {
 
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
             Let&apos;s build something{" "}
-            <span className="italic underline decoration-4 underline-offset-8">unforgettable</span>.
+            <span className="underline decoration-4 underline-offset-8">unforgettable</span>.
           </h2>
 
           <p className="max-w-md text-base md:text-lg font-sans leading-relaxed">

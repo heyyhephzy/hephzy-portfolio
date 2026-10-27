@@ -79,7 +79,7 @@ export default function CraftSection() {
             The Process
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-main)]">
-            How I <span className="subtle-highlight font-serif italic">build</span>.
+            How I <span className="subtle-highlight font-serif">build</span>.
           </h2>
           <p className="text-sm text-[var(--text-muted)] mt-2 font-sans max-w-xl">
             A 4-step pipeline: from systems mapping to vector art to developer-ready polish.
