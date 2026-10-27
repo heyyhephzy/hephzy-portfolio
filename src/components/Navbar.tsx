@@ -76,7 +76,7 @@ export default function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-6 sm:px-10 lg:px-16 transition-all duration-300 ${scrolled ? "py-1.5 sm:py-2" : "py-3 sm:py-4"}`}>
       {/* Same edges as the page content (see .site-wrap: 1440px minus the side margins) */}
       <nav
-        className={`w-full max-w-[1312px] pl-4 pr-2.5 sm:px-5 rounded-full flex items-center justify-between transition-all ${scrolled ? "py-1.5 sm:py-2" : "py-2.5 sm:py-3"} duration-300 backdrop-blur-md ${
+        className={`w-full max-w-[1312px] pl-4 pr-2.5 sm:px-5 rounded-full flex items-center justify-between gap-3 transition-all ${scrolled ? "py-1.5 sm:py-2" : "py-2.5 sm:py-3"} duration-300 backdrop-blur-md ${
           scrolled
             ? "bg-[var(--bg-card)]/85 shadow-md shadow-black/5"
             : "bg-[var(--bg-card)]/60"
@@ -85,7 +85,7 @@ export default function Navbar() {
         {/* Brand Logo with Interactive Eye-Tracking Wordmark (Inspired by Uxora) */}
         <Link
           href="/#top"
-          className="flex items-center gap-2 group cursor-pointer"
+          className="flex shrink-0 items-center gap-2 group cursor-pointer"
           title="Hephzy"
         >
           {/* Hephzy mascot: the body is an image, the eyes are drawn over it so they can follow the cursor */}
@@ -130,7 +130,7 @@ export default function Navbar() {
         </div>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           {/* Theme Switcher */}
           <button
             onClick={toggleTheme}
@@ -149,7 +149,8 @@ export default function Navbar() {
             href="mailto:heyyhephzy@gmail.com"
             className="flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-3 sm:px-4 py-1.5 sm:py-2 font-serif text-sm sm:text-base font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none transition-transform duration-150 whitespace-nowrap"
           >
-            <span>Get in touch</span>
+            <span className="sm:hidden">Contact</span>
+            <span className="hidden sm:inline">Get in touch</span>
             <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#FF8CC6] text-[#141214]"><ArrowUpRight className="w-3.5 h-3.5" /></span>
           </a>
 
