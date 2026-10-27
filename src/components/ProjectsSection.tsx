@@ -29,7 +29,7 @@ export default function ProjectsSection() {
         {/* Disabled for now: the full Work page isn't ready yet */}
         <span
           aria-disabled="true"
-          className="inline-flex items-center gap-2.5 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-4 py-2.5 font-serif text-sm sm:text-base font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] opacity-40 pointer-events-none select-none"
+          className="inline-flex items-center gap-2.5 rounded-xl border-[3px] border-[var(--text-main)] bg-[var(--text-main)] px-4 py-2.5 font-serif text-sm sm:text-base font-bold text-[var(--bg-main)] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] opacity-60 pointer-events-none select-none"
         >
           <span>View more work</span>
           <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]"><ArrowUpRight className="w-3.5 h-3.5" /></span>
