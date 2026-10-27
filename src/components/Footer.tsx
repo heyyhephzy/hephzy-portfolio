@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[#2E2A2C] pt-8 font-sans text-sm sm:gap-x-10">
+        <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[#2E2A2C] pt-8 font-sans text-base sm:gap-x-10 md:mt-auto md:gap-x-14 md:text-2xl">
           {links.map((link) => {
             const isExternal = link.href.startsWith("http");
             return (
@@ -94,7 +94,7 @@ export default function Footer() {
           })}
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 md:mt-auto font-mono text-xs text-[#A8939D] sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <div className="mt-6 flex flex-col gap-3 font-mono text-xs text-[#A8939D] sm:flex-row sm:items-center sm:justify-between sm:gap-4 md:mt-8 md:text-sm">
           <p>© 2026 Hephzy · Designed &amp; drawn by me</p>
           <button onClick={scrollToTop} className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-colors hover:text-[#FF8CC6]">
             <span>Back to top</span>
