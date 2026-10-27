@@ -1,10 +1,16 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowUp, Mail, Copy, Check, Sparkles } from "lucide-react";
-import Signpost from "@/components/Signpost";
+import { ArrowUp, Copy, Check } from "lucide-react";
 
 const email = "heyyhephzy@gmail.com";
+
+const links = [
+  { label: "Behance", href: "https://www.behance.net/hephzibahyahaya" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/" },
+  { label: "X", href: "https://x.com/heyhephzy" },
+  { label: "+234 704 721 0135", href: "tel:+2347047210135" },
+];
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
@@ -35,74 +41,65 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const socials = [
-    { label: "Bē", title: "Behance", href: "https://www.behance.net/hephzibahyahaya" },
-    { label: "𝕏", title: "X (@heyhephzy)", href: "https://x.com/heyhephzy" },
-    { label: "in", title: "LinkedIn", href: "https://www.linkedin.com/in/hephzibah-yahaya-a75315256/" },
-    { label: "@", title: "Email", href: `mailto:${email}` },
-  ];
-
   return (
-    <footer ref={footerRef} id="contact" className="relative md:fixed md:inset-x-0 md:bottom-0 z-0 overflow-hidden bg-[#FF8CC6] text-[#141214]">
-      <Signpost />
+    <footer ref={footerRef} id="contact" className="relative md:fixed md:inset-x-0 md:bottom-0 z-0 overflow-hidden bg-[#111111] text-[#FFF4F8]">
+      {/* Flower garland hanging from the top edge */}
+      <img src="/footer-garland.svg" alt="" aria-hidden="true" className="block h-auto w-full" />
 
-      {/* Right side of the scene: contact, clock, socials and the footer bar */}
-      <div className="relative flex flex-col justify-between gap-12 p-6 sm:p-10 md:absolute md:inset-y-0 md:right-0 md:w-1/2 md:px-14 md:pb-4 md:pt-16">
-        <div className="space-y-5">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#141214] px-3.5 py-1 text-xs font-mono font-semibold text-white">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-            <span>HAVE A BOLD PROJECT IN MIND?</span>
+      <div className="site-wrap pb-8 pt-8 sm:pb-10 md:pt-12">
+        <div className="grid gap-6 md:grid-cols-[200px_1fr] md:gap-12">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#FF8CC6]">( Say hi )</p>
+
+          <div>
+            <h2 className="text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-[96px]">
+              <span className="block">Let&apos;s make the</span>
+              <span className="block">
+                <span className="text-[#FF4FA3]">fun bits</span> together.
+              </span>
+            </h2>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4">
+              <button
+                onClick={copyEmail}
+                className="inline-flex items-center gap-3 font-sans text-2xl font-medium underline decoration-2 underline-offset-8 transition-colors hover:text-[#FF8CC6] md:text-3xl"
+              >
+                <span>{email}</span>
+                {copied ? <Check className="w-5 h-5 text-[#FF8CC6]" /> : <Copy className="w-5 h-5 text-[#FF8CC6]" />}
+              </button>
+              <a
+                href={`mailto:${email}`}
+                className="font-mono text-xs uppercase tracking-[0.2em] text-[#A8939D] transition-colors hover:text-[#FF8CC6]"
+              >
+                Send an email ↗
+              </a>
+              {copied && <p className="font-mono text-xs text-[#A8939D]">Copied to clipboard!</p>}
+            </div>
           </div>
-
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
-            Let&apos;s build something{" "}
-            <span className="underline decoration-4 underline-offset-8">unforgettable</span>.
-          </h2>
-
-          <p className="max-w-md text-base md:text-lg font-sans leading-relaxed">
-            From zero-to-one product design to character illustration and visual systems. My inbox is always open for ambitious teams and creators.
-          </p>
-
-          <button
-            onClick={copyEmail}
-            className="inline-flex max-w-full items-center gap-3 rounded-xl border-[3px] border-[#141214] bg-[#141214] px-4 py-2.5 font-mono text-sm font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none"
-          >
-            <Mail className="w-4 h-4 text-[#FF8CC6]" />
-            <span>{email}</span>
-            <span className="rounded-full bg-white/15 p-1">
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-            </span>
-          </button>
-          {copied && <p className="font-mono text-xs">Copied to clipboard!</p>}
         </div>
 
-        <div className="space-y-6">
-          <div className="space-y-6 md:mb-10">
-          <div className="flex items-center gap-2.5">
-            {socials.map((social) => (
+        <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[#2E2A2C] pt-6 font-sans text-sm sm:gap-x-10 md:mt-16">
+          {links.map((link) => {
+            const isExternal = link.href.startsWith("http");
+            return (
               <a
-                key={social.title}
-                href={social.href}
-                target={social.href.startsWith("mailto") ? undefined : "_blank"}
-                rel={social.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                title={social.title}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#141214] text-xs font-bold text-white transition-transform hover:scale-110"
+                key={link.label}
+                href={link.href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                className="transition-colors hover:text-[#FF8CC6]"
               >
-                {social.label}
+                {link.label}
               </a>
-            ))}
-          </div>
-          </div>
+            );
+          })}
+        </div>
 
-          <div className="flex flex-col gap-4 border-t-2 border-[#141214] pt-5 font-mono text-xs sm:flex-row sm:items-center sm:justify-end md:border-white/40 md:pt-3 md:text-white">
-            <button
-              onClick={scrollToTop}
-              className="inline-flex items-center gap-2.5 self-start rounded-xl border-[3px] border-[#141214] bg-[#FFF6FA] px-3 py-1.5 font-mono text-xs font-bold text-[#141214] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none sm:self-auto"
-            >
-              <span>Back to top</span>
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#FF4FA3] text-[#141214]"><ArrowUp className="w-3.5 h-3.5" /></span>
-            </button>
-          </div>
+        <div className="mt-6 flex flex-col gap-3 font-mono text-xs text-[#A8939D] sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <p>© 2026 Hephzy · Designed &amp; drawn by me</p>
+          <button onClick={scrollToTop} className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-colors hover:text-[#FF8CC6]">
+            <span>Back to top</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
     </footer>
